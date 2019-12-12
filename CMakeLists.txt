@@ -13,6 +13,7 @@ set(src_dir
         ${PROJECT_SOURCE_DIR}/generated/Python3Parser.cpp
         ${PROJECT_SOURCE_DIR}/generated/Python3Listener.cpp
         ${PROJECT_SOURCE_DIR}/generated/Python3BaseListener.cpp
+        ${PROJECT_SOURCE_DIR}/src/BigInteger.cpp
         )
 file(GLOB antlr4-cpp-src
         ${PROJECT_SOURCE_DIR}/third_party/runtime/src/*.cpp

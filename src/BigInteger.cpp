@@ -112,7 +112,7 @@ BigInteger operator*(const BigInteger& a, const BigInteger& b) {
         for (int i = 0; i < len2; i++) {
             num2[i] = tmpb.num[i] - '0';
         }
-        for (int i = 0; i < len - 1; i++) {
+        for (int i = 0; i < len; i++) {
             ans[i] = 0;
         }
         for (int i = 0; i < len1; i++) {
@@ -160,6 +160,11 @@ bool IsGreater(int* num1, int* num2, int len)       //it's a tool func used by "
 }
 BigInteger operator/(const BigInteger& a, const BigInteger& b) {
     BigInteger tmp, tmpa = a, tmpb = b;
+    if (tmpa.num.length() == 1 && tmpa.num[0] == '0') {
+        tmp.is_positive = true;
+        tmp.num += '0';
+        return tmp;
+    }
     if (a.is_positive && b.is_positive || !a.is_positive && !b.is_positive) {
         if (a < tmpb) {
             tmp.is_positive = true;

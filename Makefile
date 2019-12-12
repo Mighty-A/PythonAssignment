@@ -244,6 +244,33 @@ generated/Python3Parser.cpp.s:
 	$(MAKE) -f CMakeFiles/python_interpreter.dir/build.make CMakeFiles/python_interpreter.dir/generated/Python3Parser.cpp.s
 .PHONY : generated/Python3Parser.cpp.s
 
+src/BigInteger.o: src/BigInteger.cpp.o
+
+.PHONY : src/BigInteger.o
+
+# target to build an object file
+src/BigInteger.cpp.o:
+	$(MAKE) -f CMakeFiles/python_interpreter.dir/build.make CMakeFiles/python_interpreter.dir/src/BigInteger.cpp.o
+.PHONY : src/BigInteger.cpp.o
+
+src/BigInteger.i: src/BigInteger.cpp.i
+
+.PHONY : src/BigInteger.i
+
+# target to preprocess a source file
+src/BigInteger.cpp.i:
+	$(MAKE) -f CMakeFiles/python_interpreter.dir/build.make CMakeFiles/python_interpreter.dir/src/BigInteger.cpp.i
+.PHONY : src/BigInteger.cpp.i
+
+src/BigInteger.s: src/BigInteger.cpp.s
+
+.PHONY : src/BigInteger.s
+
+# target to generate assembly for a file
+src/BigInteger.cpp.s:
+	$(MAKE) -f CMakeFiles/python_interpreter.dir/build.make CMakeFiles/python_interpreter.dir/src/BigInteger.cpp.s
+.PHONY : src/BigInteger.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -4289,6 +4316,9 @@ help:
 	@echo "... generated/Python3Parser.o"
 	@echo "... generated/Python3Parser.i"
 	@echo "... generated/Python3Parser.s"
+	@echo "... src/BigInteger.o"
+	@echo "... src/BigInteger.i"
+	@echo "... src/BigInteger.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

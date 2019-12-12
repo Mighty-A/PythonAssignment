@@ -138,7 +138,7 @@ A part of the correct code may be like:
 	antlrcpp::Any visitPlus(Python3Parser::PlusContext *ctx) 
     {
         antlrcpp::Any ret1, ret2;
-        ret1 = visit(ctx->NUMBER());
+        ret1 = visit(ctx->NUMBER());    //should be " visit(ctx->atom())?
         ret2 = visit(ctx->NUMBER());
         if (ret1.is<int>() && ret2.is<int>())
             return ret1.as<int>() + ret2.as<int>();

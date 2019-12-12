@@ -12,9 +12,10 @@ class BigInteger {
     friend std::ostream& operator<<(std::ostream& , const BigInteger&);
 private:
     std::string num; //stored in reverse order
-    bool is_positive = true;
+    bool is_positive = true;            //to deal with the sign
     
 public:
+    //constructor
     BigInteger() {
     }
     BigInteger(std::string numString) //constructor from the TerminalNode
@@ -31,7 +32,8 @@ public:
             }
         }
     }
-    //Display :output
+
+    //Display :output for test  
     void Display()
     {
         if (!is_positive && !(num.length() == 1 && num[0] == '0'))
@@ -122,7 +124,31 @@ public:
         *this = *this / a;
         return *this;
     }
-    
+    //type comversion
+    operator double() const {
+        double a = 0;
+        for (int i = num.length() - 1; i >= 0; i--) {
+            a *= 10;
+            a += num[i] - '0';
+        }
+        if (!is_positive) 
+            a *= -1;
+        return a;
+    }
+    operator bool() const {
+        bool tmp = true;
+        if (num.length() == 1 && num[0] == '0')
+            tmp = false;
+        return tmp;
+    }
+    operator std::string() const{
+        std::string tmp;
+        if (!is_positive && (num.length() == 1 && num[0] == '0'))
+            tmp += '-';
+        for (int i = num.length() - 1; i >= 0; i --) 
+            tmp += num[i];
+        return tmp;
+    }
 };
 
 #endif

@@ -1,0 +1,772 @@
+[
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/ANTLRErrorListener.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/ANTLRErrorListener.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/ANTLRErrorListener.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/ANTLRErrorStrategy.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/ANTLRErrorStrategy.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/ANTLRErrorStrategy.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/ANTLRFileStream.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/ANTLRFileStream.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/ANTLRFileStream.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/ANTLRInputStream.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/ANTLRInputStream.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/ANTLRInputStream.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/BailErrorStrategy.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/BailErrorStrategy.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/BailErrorStrategy.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/BaseErrorListener.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/BaseErrorListener.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/BaseErrorListener.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/BufferedTokenStream.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/BufferedTokenStream.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/BufferedTokenStream.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/CharStream.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/CharStream.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/CharStream.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/CommonToken.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/CommonToken.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/CommonToken.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/CommonTokenFactory.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/CommonTokenFactory.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/CommonTokenFactory.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/CommonTokenStream.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/CommonTokenStream.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/CommonTokenStream.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/ConsoleErrorListener.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/ConsoleErrorListener.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/ConsoleErrorListener.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/DefaultErrorStrategy.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/DefaultErrorStrategy.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/DefaultErrorStrategy.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/DiagnosticErrorListener.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/DiagnosticErrorListener.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/DiagnosticErrorListener.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/Exceptions.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/Exceptions.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/Exceptions.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/FailedPredicateException.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/FailedPredicateException.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/FailedPredicateException.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/InputMismatchException.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/InputMismatchException.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/InputMismatchException.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/IntStream.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/IntStream.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/IntStream.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/InterpreterRuleContext.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/InterpreterRuleContext.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/InterpreterRuleContext.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/Lexer.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/Lexer.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/Lexer.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/LexerInterpreter.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/LexerInterpreter.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/LexerInterpreter.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/LexerNoViableAltException.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/LexerNoViableAltException.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/LexerNoViableAltException.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/ListTokenSource.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/ListTokenSource.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/ListTokenSource.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/NoViableAltException.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/NoViableAltException.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/NoViableAltException.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/Parser.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/Parser.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/Parser.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/ParserInterpreter.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/ParserInterpreter.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/ParserInterpreter.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/ParserRuleContext.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/ParserRuleContext.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/ParserRuleContext.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/ProxyErrorListener.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/ProxyErrorListener.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/ProxyErrorListener.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/RecognitionException.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/RecognitionException.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/RecognitionException.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/Recognizer.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/Recognizer.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/Recognizer.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/RuleContext.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/RuleContext.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/RuleContext.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/RuleContextWithAltNum.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/RuleContextWithAltNum.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/RuleContextWithAltNum.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/RuntimeMetaData.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/RuntimeMetaData.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/RuntimeMetaData.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/Token.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/Token.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/Token.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/TokenSource.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/TokenSource.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/TokenSource.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/TokenStream.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/TokenStream.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/TokenStream.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/TokenStreamRewriter.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/TokenStreamRewriter.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/TokenStreamRewriter.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/UnbufferedCharStream.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/UnbufferedCharStream.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/UnbufferedCharStream.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/UnbufferedTokenStream.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/UnbufferedTokenStream.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/UnbufferedTokenStream.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/Vocabulary.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/Vocabulary.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/Vocabulary.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/WritableToken.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/WritableToken.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/WritableToken.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ATN.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ATN.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ATN.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ATNConfig.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNConfig.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNConfig.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ATNConfigSet.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNConfigSet.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNConfigSet.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ATNDeserializationOptions.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNDeserializationOptions.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNDeserializationOptions.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ATNDeserializer.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNDeserializer.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNDeserializer.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ATNSerializer.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNSerializer.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNSerializer.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ATNSimulator.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNSimulator.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNSimulator.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ATNState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ATNState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/AbstractPredicateTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/AbstractPredicateTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/AbstractPredicateTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ActionTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ActionTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ActionTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/AmbiguityInfo.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/AmbiguityInfo.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/AmbiguityInfo.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ArrayPredictionContext.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ArrayPredictionContext.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ArrayPredictionContext.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/AtomTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/AtomTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/AtomTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/BasicBlockStartState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/BasicBlockStartState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/BasicBlockStartState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/BasicState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/BasicState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/BasicState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/BlockEndState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/BlockEndState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/BlockEndState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/BlockStartState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/BlockStartState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/BlockStartState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ContextSensitivityInfo.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ContextSensitivityInfo.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ContextSensitivityInfo.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/DecisionEventInfo.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/DecisionEventInfo.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/DecisionEventInfo.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/DecisionInfo.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/DecisionInfo.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/DecisionInfo.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/DecisionState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/DecisionState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/DecisionState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/EmptyPredictionContext.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/EmptyPredictionContext.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/EmptyPredictionContext.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/EpsilonTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/EpsilonTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/EpsilonTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ErrorInfo.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ErrorInfo.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ErrorInfo.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LL1Analyzer.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LL1Analyzer.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LL1Analyzer.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerATNConfig.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerATNConfig.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerATNConfig.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerATNSimulator.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerATNSimulator.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerATNSimulator.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerAction.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerAction.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerAction.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerActionExecutor.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerActionExecutor.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerActionExecutor.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerChannelAction.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerChannelAction.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerChannelAction.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerCustomAction.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerCustomAction.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerCustomAction.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerIndexedCustomAction.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerIndexedCustomAction.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerIndexedCustomAction.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerModeAction.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerModeAction.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerModeAction.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerMoreAction.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerMoreAction.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerMoreAction.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerPopModeAction.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerPopModeAction.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerPopModeAction.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerPushModeAction.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerPushModeAction.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerPushModeAction.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerSkipAction.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerSkipAction.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerSkipAction.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LexerTypeAction.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerTypeAction.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LexerTypeAction.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LookaheadEventInfo.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LookaheadEventInfo.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LookaheadEventInfo.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/LoopEndState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/LoopEndState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/LoopEndState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/NotSetTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/NotSetTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/NotSetTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/OrderedATNConfigSet.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/OrderedATNConfigSet.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/OrderedATNConfigSet.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ParseInfo.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ParseInfo.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ParseInfo.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ParserATNSimulator.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ParserATNSimulator.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ParserATNSimulator.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/PlusBlockStartState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/PlusBlockStartState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/PlusBlockStartState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/PlusLoopbackState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/PlusLoopbackState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/PlusLoopbackState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/PrecedencePredicateTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/PrecedencePredicateTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/PrecedencePredicateTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/PredicateEvalInfo.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/PredicateEvalInfo.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/PredicateEvalInfo.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/PredicateTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/PredicateTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/PredicateTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/PredictionContext.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/PredictionContext.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/PredictionContext.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/PredictionMode.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/PredictionMode.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/PredictionMode.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/ProfilingATNSimulator.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/ProfilingATNSimulator.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/ProfilingATNSimulator.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/RangeTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/RangeTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/RangeTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/RuleStartState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/RuleStartState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/RuleStartState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/RuleStopState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/RuleStopState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/RuleStopState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/RuleTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/RuleTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/RuleTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/SemanticContext.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/SemanticContext.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/SemanticContext.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/SetTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/SetTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/SetTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/SingletonPredictionContext.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/SingletonPredictionContext.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/SingletonPredictionContext.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/StarBlockStartState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/StarBlockStartState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/StarBlockStartState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/StarLoopEntryState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/StarLoopEntryState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/StarLoopEntryState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/StarLoopbackState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/StarLoopbackState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/StarLoopbackState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/TokensStartState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/TokensStartState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/TokensStartState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/Transition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/Transition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/Transition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/atn/WildcardTransition.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/atn/WildcardTransition.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/atn/WildcardTransition.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/dfa/DFA.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/dfa/DFA.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/dfa/DFA.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/dfa/DFASerializer.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/dfa/DFASerializer.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/dfa/DFASerializer.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/dfa/DFAState.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/dfa/DFAState.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/dfa/DFAState.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/dfa/LexerDFASerializer.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/dfa/LexerDFASerializer.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/dfa/LexerDFASerializer.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/misc/InterpreterDataReader.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/misc/InterpreterDataReader.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/misc/InterpreterDataReader.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/misc/Interval.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/misc/Interval.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/misc/Interval.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/misc/IntervalSet.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/misc/IntervalSet.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/misc/IntervalSet.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/misc/MurmurHash.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/misc/MurmurHash.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/misc/MurmurHash.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/misc/Predicate.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/misc/Predicate.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/misc/Predicate.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/support/Any.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/support/Any.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/support/Any.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/support/Arrays.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/support/Arrays.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/support/Arrays.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/support/CPPUtils.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/support/CPPUtils.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/support/CPPUtils.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/support/StringUtils.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/support/StringUtils.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/support/StringUtils.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/support/guid.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/support/guid.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/support/guid.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/ErrorNode.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/ErrorNode.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/ErrorNode.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/ErrorNodeImpl.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/ErrorNodeImpl.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/ErrorNodeImpl.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/IterativeParseTreeWalker.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/IterativeParseTreeWalker.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/IterativeParseTreeWalker.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/ParseTree.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/ParseTree.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/ParseTree.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/ParseTreeListener.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/ParseTreeListener.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/ParseTreeListener.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/ParseTreeVisitor.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/ParseTreeVisitor.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/ParseTreeVisitor.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/ParseTreeWalker.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/ParseTreeWalker.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/ParseTreeWalker.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/TerminalNode.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/TerminalNode.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/TerminalNode.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/TerminalNodeImpl.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/TerminalNodeImpl.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/TerminalNodeImpl.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/Trees.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/Trees.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/Trees.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/pattern/Chunk.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/Chunk.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/Chunk.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/pattern/ParseTreeMatch.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/ParseTreeMatch.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/ParseTreeMatch.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/pattern/ParseTreePattern.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/ParseTreePattern.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/ParseTreePattern.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/pattern/ParseTreePatternMatcher.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/ParseTreePatternMatcher.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/ParseTreePatternMatcher.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/pattern/RuleTagToken.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/RuleTagToken.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/RuleTagToken.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/pattern/TagChunk.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/TagChunk.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/TagChunk.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/pattern/TextChunk.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/TextChunk.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/TextChunk.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/pattern/TokenTagToken.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/TokenTagToken.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/pattern/TokenTagToken.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/xpath/XPath.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPath.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPath.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/xpath/XPathElement.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathElement.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathElement.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/xpath/XPathLexer.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathLexer.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathLexer.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/xpath/XPathLexerErrorListener.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathLexerErrorListener.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathLexerErrorListener.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/xpath/XPathRuleAnywhereElement.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathRuleAnywhereElement.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathRuleAnywhereElement.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/xpath/XPathRuleElement.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathRuleElement.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathRuleElement.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/xpath/XPathTokenAnywhereElement.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathTokenAnywhereElement.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathTokenAnywhereElement.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/xpath/XPathTokenElement.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathTokenElement.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathTokenElement.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/antlr4-cpp-runtime.dir/third_party/runtime/src/tree/xpath/XPathWildcardElement.cpp.o -c /home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathWildcardElement.cpp",
+  "file": "/home/yhy/Python_Assignment/third_party/runtime/src/tree/xpath/XPathWildcardElement.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/python_interpreter.dir/generated/Python3Lexer.cpp.o -c /home/yhy/Python_Assignment/generated/Python3Lexer.cpp",
+  "file": "/home/yhy/Python_Assignment/generated/Python3Lexer.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/python_interpreter.dir/generated/Python3Parser.cpp.o -c /home/yhy/Python_Assignment/generated/Python3Parser.cpp",
+  "file": "/home/yhy/Python_Assignment/generated/Python3Parser.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/python_interpreter.dir/generated/Python3Listener.cpp.o -c /home/yhy/Python_Assignment/generated/Python3Listener.cpp",
+  "file": "/home/yhy/Python_Assignment/generated/Python3Listener.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/python_interpreter.dir/generated/Python3BaseListener.cpp.o -c /home/yhy/Python_Assignment/generated/Python3BaseListener.cpp",
+  "file": "/home/yhy/Python_Assignment/generated/Python3BaseListener.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/python_interpreter.dir/src/BigInteger.cpp.o -c /home/yhy/Python_Assignment/src/BigInteger.cpp",
+  "file": "/home/yhy/Python_Assignment/src/BigInteger.cpp"
+},
+{
+  "directory": "/home/yhy/Python_Assignment/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/yhy/Python_Assignment/generated -I/home/yhy/Python_Assignment/third_party -I/home/yhy/Python_Assignment/third_party/runtime/src -I/home/yhy/Python_Assignment/src     -g -g   -std=gnu++14 -o CMakeFiles/python_interpreter.dir/src/main.cpp.o -c /home/yhy/Python_Assignment/src/main.cpp",
+  "file": "/home/yhy/Python_Assignment/src/main.cpp"
+}
+]

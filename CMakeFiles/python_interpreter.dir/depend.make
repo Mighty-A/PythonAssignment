@@ -643,6 +643,9 @@ CMakeFiles/python_interpreter.dir/generated/Python3Parser.cpp.o: third_party/run
 CMakeFiles/python_interpreter.dir/generated/Python3Parser.cpp.o: third_party/runtime/src/tree/xpath/XPathWildcardAnywhereElement.h
 CMakeFiles/python_interpreter.dir/generated/Python3Parser.cpp.o: third_party/runtime/src/tree/xpath/XPathWildcardElement.h
 
+CMakeFiles/python_interpreter.dir/src/BigInteger.cpp.o: src/BigInteger.cpp
+CMakeFiles/python_interpreter.dir/src/BigInteger.cpp.o: src/BigInteger.h
+
 CMakeFiles/python_interpreter.dir/src/main.cpp.o: src/BigInteger.h
 CMakeFiles/python_interpreter.dir/src/main.cpp.o: src/Evalvisitor.h
 CMakeFiles/python_interpreter.dir/src/main.cpp.o: src/main.cpp

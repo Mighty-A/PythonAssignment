@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/yhy/Python_Assignment/generated/Python3Lexer.cpp" "/home/yhy/Python_Assignment/CMakeFiles/python_interpreter.dir/generated/Python3Lexer.cpp.o"
   "/home/yhy/Python_Assignment/generated/Python3Listener.cpp" "/home/yhy/Python_Assignment/CMakeFiles/python_interpreter.dir/generated/Python3Listener.cpp.o"
   "/home/yhy/Python_Assignment/generated/Python3Parser.cpp" "/home/yhy/Python_Assignment/CMakeFiles/python_interpreter.dir/generated/Python3Parser.cpp.o"
+  "/home/yhy/Python_Assignment/src/BigInteger.cpp" "/home/yhy/Python_Assignment/CMakeFiles/python_interpreter.dir/src/BigInteger.cpp.o"
   "/home/yhy/Python_Assignment/src/main.cpp" "/home/yhy/Python_Assignment/CMakeFiles/python_interpreter.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
