@@ -9,15 +9,15 @@
 #include <iomanip>
 #include <vector>
 
-std::vector<std::map<std::string, antlrcpp::Any>> Varibles;
+std::vector<std::map<std::string, antlrcpp::Any>> Variables;
 
 class EvalVisitor: public Python3BaseVisitor {
 
 //todo:override all methods of Python3BaseVisitor
     
     antlrcpp::Any visitFile_input(Python3Parser::File_inputContext *ctx) override {
-        std::map<std::string, antlrcpp::Any> GlobalVarible;
-        Varibles.push_back(GlobalVarible);
+        std::map<std::string, antlrcpp::Any> GlobalVaraible;
+        Variables.push_back(GlobalVaraible);
         std::vector<Python3Parser::StmtContext *> stmtlist;
         stmtlist = ctx->stmt();
         for (auto i : stmtlist) { //visit all the stmt
@@ -69,6 +69,14 @@ class EvalVisitor: public Python3BaseVisitor {
         } else {                //incomplete
             int length = ctx->testlist().size();
             antlrcpp::Any value = visit(ctx->testlist(length - 1));
+            if (value.is<std::string>() && (value.as<std::string>()[0] != '"' || value.as<std::string>()[0] != '\'')) {         //the value is a variable name
+                std::string variableName = value.as<std::string>();
+                for (int j = Variables.size() - 1; j >= 0; j--) {
+                    if (Variables[j].count(variableName)) {
+                        value = Variables[j][variableName];
+                    }
+                }
+            }
             for (int i = length - 2; i >= 0; i--) {
                 /*
                 std::vector<antlrcpp::Any>* tmpTest = visit(ctx->testlist(i)).as<std::vector<antlrcpp::Any>*>();
@@ -77,10 +85,10 @@ class EvalVisitor: public Python3BaseVisitor {
                     */
                     bool flag = false;
                     std::string variableName = visit(ctx->testlist(i)).as<std::string>();
-                    for (int j = Varibles.size() - 1; j >= 0; j--) {
-                        if (Varibles[j].count(variableName)) {
+                    for (int j = Variables.size() - 1; j >= 0; j--) {
+                        if (Variables[j].count(variableName)) {
 
-                            Varibles[j][variableName] = value;          //update or new a varible
+                            Variables[j][variableName] = value;          //update or new a varible
                             flag = true;
                             
                             break;
@@ -89,7 +97,7 @@ class EvalVisitor: public Python3BaseVisitor {
 
                     }
                     if (!flag) {
-                        Varibles[Varibles.size() - 1][variableName] = value;
+                        Variables[Variables.size() - 1][variableName] = value;
                     }
                 
                 //delete tmpTest;
@@ -211,9 +219,9 @@ class EvalVisitor: public Python3BaseVisitor {
                                 std::cout << tmpString[j];
                             }
                         } else {
-                            for (int k = Varibles.size() - 1; k >= 0; k--) {
-                                if (Varibles[k].count(tmpString)) {
-                                    antlrcpp::Any ret = Varibles[k][tmpString];
+                            for (int k = Variables.size() - 1; k >= 0; k--) {
+                                if (Variables[k].count(tmpString)) {
+                                    antlrcpp::Any ret = Variables[k][tmpString];
                                     if (ret.is<std::string>()) {
                                         std::string ret1 = ret.as<std::string>();
                                         for (int j = 1; j < ret1.length() - 2; j++) {
