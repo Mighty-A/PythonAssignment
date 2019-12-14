@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/python_interpreter",
-            "args": ["./testData/test4.in"],
+            "args": ["./testData/test5.in"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

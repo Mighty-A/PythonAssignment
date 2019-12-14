@@ -69,14 +69,7 @@ class EvalVisitor: public Python3BaseVisitor {
         } else {                //incomplete
             int length = ctx->testlist().size();
             antlrcpp::Any value = visit(ctx->testlist(length - 1));
-            if (value.is<std::string>() && (value.as<std::string>()[0] != '"' || value.as<std::string>()[0] != '\'')) {         //the value is a variable name
-                std::string variableName = value.as<std::string>();
-                for (int j = Variables.size() - 1; j >= 0; j--) {
-                    if (Variables[j].count(variableName)) {
-                        value = Variables[j][variableName];
-                    }
-                }
-            }
+
             for (int i = length - 2; i >= 0; i--) {
                 /*
                 std::vector<antlrcpp::Any>* tmpTest = visit(ctx->testlist(i)).as<std::vector<antlrcpp::Any>*>();
@@ -179,13 +172,101 @@ class EvalVisitor: public Python3BaseVisitor {
         if (ctx->NOT_EQ_2())
             return Python3Parser::NOT_EQ_2;
     }
+
     antlrcpp::Any visitArith_expr(Python3Parser::Arith_exprContext* ctx) override {
-        if (ctx->ADD().size() > 0) {
-
-        } else if (ctx->MINUS().size() > 0) {
-
-        } else {
+        if (ctx->ADD().size() == 0 && ctx->MINUS().size() == 0) {           //no arith
             return visit(ctx->term()[0]);
+        } else {                                                        //arith
+            int countOfADD = ctx->ADD().size();
+            int countOfMINUS = ctx->MINUS().size();
+            int countOfTerm = ctx->term().size();
+            antlrcpp::Any firstTerm = visit(ctx->term(0));         //get the last term first to check the type of the term
+            if (firstTerm.is<std::string>()) {   //deal with string
+                std::string ansString = visit(ctx->term(0)).as<std::string>();
+                for (int i = 1; i < ctx->term().size(); i++) {
+                    std::string tmp = visit(ctx->term(i)).as<std::string>();
+                    ansString.erase(ansString.length() - 1, 1);
+                    tmp.erase(0, 1);
+                    ansString += tmp;
+                }
+                return ansString;
+            } else {            //deal with numbers
+                bool isInteger = true;
+                BigInteger resultInt("0");
+                double resultFloat = 0;
+                if (firstTerm.is<BigInteger>()) {
+                    resultInt = firstTerm.as<BigInteger>();
+                }
+                if (firstTerm.is<double>()) {
+                    isInteger = false;
+                    resultFloat = firstTerm.as<double>();
+                }
+                while (countOfADD > 0 || countOfMINUS > 0) {
+                    int tmpIndexOfADD = 0;
+                    int tmpINdexOfMINUS = 0;
+                    
+
+                    if (countOfADD > 0) {
+                        tmpIndexOfADD = ctx->ADD(countOfADD - 1)->getSymbol()->getTokenIndex();
+                    } else {
+                        tmpINdexOfMINUS = ctx->MINUS(countOfMINUS - 1)->getSymbol()->getTokenIndex();
+                    }
+                    if (tmpIndexOfADD > tmpINdexOfMINUS) {
+                        countOfADD--;
+                        countOfTerm--;
+                        antlrcpp::Any tmp = visit(ctx->term(countOfTerm));
+                        if (tmp.is<BigInteger>() && isInteger) {
+                            resultInt += tmp.as<BigInteger>();
+                        } else if (tmp.is<BigInteger>() && !isInteger) {
+                            resultFloat += double(tmp.as<BigInteger>());
+                        } else if (tmp.is<double>() && isInteger) {
+                            resultFloat = double (resultInt);
+                            resultFloat += tmp.as<double>();
+                            isInteger = false;
+                        } else if (tmp.is<double>() && !isInteger) {
+                            resultFloat += tmp.as<double>();
+                        } else if (tmp.is<bool>() && isInteger) {
+                            if (tmp.as<bool>()) {
+                                BigInteger one0("1");
+                                resultInt += one0;
+                            }
+                        } else if (tmp.is<bool>() && !isInteger) {
+                            if (tmp.as<bool>()) {
+                                resultFloat += 1.0;
+                            }
+                        }
+                    } else {
+                        countOfMINUS--;
+                        countOfTerm--;
+                        antlrcpp::Any tmp = visit(ctx->term(countOfTerm));
+                        if (tmp.is<BigInteger>() && isInteger) {
+                            resultInt -= tmp.as<BigInteger>();
+                        } else if (tmp.is<BigInteger>() && !isInteger) {
+                            resultFloat -= double(tmp.as<BigInteger>());
+                        } else if (tmp.is<double>() && isInteger) {
+                            resultFloat = double(resultInt);
+                            resultFloat -= tmp.as<double>();
+                            isInteger = false;
+                        } else if (tmp.is<double>() && !isInteger) {
+                            resultFloat -= tmp.as<double>();
+                        } else if (tmp.is<bool>() && isInteger) {
+                            if (tmp.as<bool>()) {
+                                BigInteger one0("1");
+                                resultInt -= one0;
+                            }
+                        } else if (tmp.is<bool>() && !isInteger) {
+                            if (tmp.as<bool>()) {
+                                resultFloat -= 1.0;
+                            }
+                        }
+                    }
+                }
+                if (isInteger) {
+                    return resultInt;
+                } else {
+                    return resultFloat;
+                }
+            }
         }
     }
 
@@ -263,7 +344,16 @@ class EvalVisitor: public Python3BaseVisitor {
             }
             return 0;   //
         } else {
-            return visit(ctx->atom());
+            antlrcpp::Any value = visit(ctx->atom());
+            if (value.is<std::string>() && (value.as<std::string>()[0] != '"' || value.as<std::string>()[0] != '\'')) { //the value is a variable name
+                std::string variableName = value.as<std::string>();
+                for (int j = Variables.size() - 1; j >= 0; j--) {
+                    if (Variables[j].count(variableName)) {
+                        value = Variables[j][variableName];
+                    }
+                }
+            }
+            return value;
         }
 
     }
@@ -290,11 +380,12 @@ class EvalVisitor: public Python3BaseVisitor {
                 double tmp = 0;
                 for (int j = 0; j < i; j++) {
                     tmp *= 10;
-                    tmp += tmpNumber[i] - '0';
+                    tmp += tmpNumber[j] - '0';
                 }
                 for (int j = i + 1; j < tmpNumber.length(); j++) {
-                    tmp += (double)(tmpNumber[i] - '0') * pow(10, i - j);
+                    tmp += (double)(tmpNumber[j] - '0') * pow(10, i - j);
                 }
+                
                 return tmp;
             } else {
                 BigInteger tmp(tmpNumber);
