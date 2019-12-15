@@ -124,6 +124,10 @@ public:
         *this = *this / a;
         return *this;
     }
+    BigInteger& operator%=(BigInteger& a) {
+        *this  = *this % a;
+        return *this;
+    }
     //type comversion
     operator double() const {
         double a = 0;

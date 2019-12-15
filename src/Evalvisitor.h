@@ -10,9 +10,10 @@
 #include <vector>
 
 std::vector<std::map<std::string, antlrcpp::Any>> Variables;
-
 class EvalVisitor: public Python3BaseVisitor {
-
+    int MinOfFour(int a, int b, int c, int d) {
+        return std::min(a, std::min(b, std::min(c, d)));
+    }
 //todo:override all methods of Python3BaseVisitor
     
     antlrcpp::Any visitFile_input(Python3Parser::File_inputContext *ctx) override {
@@ -69,7 +70,6 @@ class EvalVisitor: public Python3BaseVisitor {
         } else {                //incomplete
             int length = ctx->testlist().size();
             antlrcpp::Any value = visit(ctx->testlist(length - 1));
-
             for (int i = length - 2; i >= 0; i--) {
                 /*
                 std::vector<antlrcpp::Any>* tmpTest = visit(ctx->testlist(i)).as<std::vector<antlrcpp::Any>*>();
@@ -152,7 +152,161 @@ class EvalVisitor: public Python3BaseVisitor {
 
     antlrcpp::Any visitComparison(Python3Parser::ComparisonContext* ctx) override {
         if (ctx->comp_op().size() > 0) {
+            std::vector<antlrcpp::Any> tmpArith_expr;
+            for (int i = 0; i < ctx->arith_expr().size(); i++) {            //visit arith
+                tmpArith_expr.push_back(visit(ctx->arith_expr(i)));
+            }
+            bool result = true;
+            for (int i = 0; i < ctx->comp_op().size(); i++) {               //deal with comparison;
+                int tmpComp = visit(ctx->comp_op(i)).as<int>();
+                if (tmpArith_expr[i].is<std::string>()) {
+                    std::string tmp1 = tmpArith_expr[i].as<std::string>();
+                    std::string tmp2 = tmpArith_expr[i + 1].as<std::string>();
+                    switch (tmpComp)
+                    {
+                    case 0:
+                        if (tmp1 >= tmp2) 
+                            result = false;
+                        break;
+                    case 1:
+                        if (tmp1 <= tmp2)
+                            result = false;
+                        break;
+                    case 2:
+                        if (tmp1 != tmp2)
+                            result = false;
+                        break;
+                    case 3:
+                        if (tmp1 < tmp2)
+                            result = false;
+                        break;
+                    case 4:
+                        if (tmp1 > tmp2) 
+                            result = false;
+                        break;
+                    case 5:
+                        if (tmp1 == tmp2)
+                            result = false;
+                        break;
+                    default:
+                        break;
+                    }
 
+                } else if (tmpArith_expr[i].is<BigInteger>() && tmpArith_expr[i + 1].is<BigInteger>()) {
+                    BigInteger tmp1 = tmpArith_expr[i].as<BigInteger>();
+                    BigInteger tmp2 = tmpArith_expr[i + 1].as<BigInteger>();
+                    switch (tmpComp) {
+                    case 0:
+                        if (tmp1 >= tmp2)
+                            result = false;
+                        break;
+                    case 1:
+                        if (tmp1 <= tmp2)
+                            result = false;
+                        break;
+                    case 2:
+                        if (tmp1 != tmp2)
+                            result = false;
+                        break;
+                    case 3:
+                        if (tmp1 < tmp2)
+                            result = false;
+                        break;
+                    case 4:
+                        if (tmp1 > tmp2)
+                            result = false;
+                        break;
+                    case 5:
+                        if (tmp1 == tmp2)
+                            result = false;
+                        break;
+                    default:
+                        break;
+                    }
+                } else if (tmpArith_expr[i].is<double>() && tmpArith_expr[i + 1].is<double>()) {
+                    double tmp1 = tmpArith_expr[i].as<double>();
+                    double tmp2 = tmpArith_expr[i + 1].as<double>();
+                    switch (tmpComp) {
+                    case 0:
+                        if (tmp1 >= tmp2)
+                            result = false;
+                        break;
+                    case 1:
+                        if (tmp1 <= tmp2)
+                            result = false;
+                        break;
+                    case 2:
+                        if (tmp1 != tmp2)
+                            result = false;
+                        break;
+                    case 3:
+                        if (tmp1 < tmp2)
+                            result = false;
+                        break;
+                    case 4:
+                        if (tmp1 > tmp2)
+                            result = false;
+                        break;
+                    case 5:
+                        if (tmp1 == tmp2)
+                            result = false;
+                        break;
+                    default:
+                        break;
+                    }
+                } else if (!tmpArith_expr[i].is<BigInteger>() || !tmpArith_expr[i + 1].is<BigInteger>()) {              //one of the two is not BigInteger
+                    double tmp1 = 0, tmp2 = 0;
+                    if (tmpArith_expr[i].is<BigInteger>()) 
+                        tmp1 = double(tmpArith_expr[i].as<BigInteger>());
+                    else if (tmpArith_expr[i].is<double>()) 
+                        tmp1 = double(tmpArith_expr[i].as<double>());
+                    else if (tmpArith_expr[i].is<bool>()) 
+                        if (tmpArith_expr[i].as<bool>()) 
+                            tmp1 = 1;
+                        else 
+                            tmp1 = 0;
+                    if (tmpArith_expr[i + 1].is<BigInteger>())
+                        tmp2 = double(tmpArith_expr[i + 1].as<BigInteger>());
+                    else if (tmpArith_expr[i + 1].is<double>())
+                        tmp2 = double(tmpArith_expr[i + 1].as<double>());
+                    else if (tmpArith_expr[i + 1].is<bool>())
+                        if (tmpArith_expr[i + 1].as<bool>())
+                            tmp2 = 1;
+                        else
+                            tmp2 = 0;
+                    switch (tmpComp) {
+                    case 0:
+                        if (tmp1 >= tmp2)
+                            result = false;
+                        break;
+                    case 1:
+                        if (tmp1 <= tmp2)
+                            result = false;
+                        break;
+                    case 2:
+                        if (tmp1 != tmp2)
+                            result = false;
+                        break;
+                    case 3:
+                        if (tmp1 < tmp2)
+                            result = false;
+                        break;
+                    case 4:
+                        if (tmp1 > tmp2)
+                            result = false;
+                        break;
+                    case 5:
+                        if (tmp1 == tmp2)
+                            result = false;
+                        break;
+                    default:
+                        break;
+                    }
+                }
+                if (!result) //short circuit
+                    break;
+            }
+            return result;
         } else {
             return visit(ctx->arith_expr()[0]);
         }
@@ -160,17 +314,17 @@ class EvalVisitor: public Python3BaseVisitor {
     //return the index of comp;
     antlrcpp::Any visitComp_op(Python3Parser::Comp_opContext* ctx) override {
         if (ctx->LESS_THAN())
-            return Python3Parser::LESS_THAN;
+            return 0;
         if (ctx->GREATER_THAN())
-            return Python3Parser::GREATER_THAN;
+            return 1;
         if (ctx->EQUALS())
-            return Python3Parser::EQUALS;
+            return 2;
         if (ctx->GT_EQ())
-            return Python3Parser::GT_EQ;
+            return 3;
         if (ctx->LT_EQ()) 
-            return Python3Parser::LT_EQ;
+            return 4;
         if (ctx->NOT_EQ_2())
-            return Python3Parser::NOT_EQ_2;
+            return 5;
     }
 
     antlrcpp::Any visitArith_expr(Python3Parser::Arith_exprContext* ctx) override {
@@ -272,7 +426,111 @@ class EvalVisitor: public Python3BaseVisitor {
 
     antlrcpp::Any visitTerm(Python3Parser::TermContext* ctx) override {
         if (ctx->factor().size() > 1) {
+            antlrcpp::Any tmpfirstFactor = visit(ctx->factor(0));
+            if (tmpfirstFactor.is<std::string>()) {
+                std::string tmpString = tmpfirstFactor.as<std::string>();
+                BigInteger tmpFactor = visit(ctx->factor(1)).as<BigInteger>();
+                BigInteger one("1");
+                std::string resultString;
+                resultString += '"';
+                tmpString.erase(0,1);
+                tmpString.erase(tmpString.length() - 1, 1);
+                for (BigInteger i("0"); i < tmpFactor; i = i + one) {
+                    resultString += tmpString;
+                }
+                resultString += '"';
+                return resultString;
+            }
+            bool resultIsBigInteger = true;
+            BigInteger resultInt("0");
+            double resultFloat = 0;
+            if (tmpfirstFactor.is<BigInteger>()) {
+                resultInt = tmpfirstFactor.as<BigInteger>();
+            } else if (tmpfirstFactor.is<bool>()) {
+                if (tmpfirstFactor.as<bool>()) 
+                    resultInt = BigInteger("1");
+                
+            } else if (tmpfirstFactor.is<double>()) {
+                resultIsBigInteger = false;
+                resultFloat = tmpfirstFactor.as<double>();
+            }
+            int countOfSTAR = ctx->STAR().size();
+            int countOfDIV = ctx->DIV().size();
+            int countOfIDIV = ctx->IDIV().size();
+            int countOfMOD = ctx->MOD().size();
+            int iSTAR, iDIV, iIDIV, iMOD, iFactor;
+            iSTAR = iDIV = iIDIV = iMOD = 0;
+            iFactor = 1;
+            while (iFactor < ctx->factor().size()) {
+                int tmpIndexOfSTAR = 0x3f3f3f, tmpIndexOfDIV = 0x3f3f3f, tmpIndexOfIDIV = 0x3f3f3f, tmpIndexOfMOD = 0x3f3f3f;
+                if (iSTAR < countOfSTAR) 
+                    tmpIndexOfSTAR = ctx->STAR(iSTAR)->getSymbol()->getTokenIndex();
+                if (iDIV < countOfIDIV)
+                    tmpIndexOfIDIV = ctx->IDIV(iIDIV)->getSymbol()->getTokenIndex();
+                if (iDIV < countOfDIV)
+                    tmpIndexOfDIV = ctx->DIV(iDIV)->getSymbol()->getTokenIndex();
+                if (iMOD < countOfMOD) 
+                    tmpIndexOfMOD = ctx->MOD(iMOD)->getSymbol()->getTokenIndex();
+                int min0 = MinOfFour(tmpIndexOfSTAR, tmpIndexOfDIV, tmpIndexOfIDIV, tmpIndexOfMOD);
+                antlrcpp::Any tmpFactor = visit(ctx->factor(iFactor));
+                if (tmpIndexOfSTAR == min0) {
+                    if (tmpFactor.is<double>()) {
+                        if (resultIsBigInteger) {
+                            resultIsBigInteger = false;
+                            resultFloat = double(resultInt);
+                        }
+                        resultFloat *= tmpFactor.as<double>();
+                    } else if (tmpFactor.is<BigInteger>()) {
+                        if (resultIsBigInteger) {
+                            resultInt *= tmpFactor.as<BigInteger>();
+                        } else {
+                            resultFloat *= double(tmpFactor.as<BigInteger>());
+                        }
+                    } else if (tmpFactor.is<bool>()) {
+                        if (resultIsBigInteger) {
+                            if (!tmpFactor.as<bool>())          //* 0
+                                resultInt = BigInteger("0");
+                        } else {
+                            if (!tmpFactor.as<bool>())          //* 0
+                                resultFloat = 0;
+                        }
+                    }
+                    iSTAR++;
+                } else if (tmpIndexOfDIV == min0) {
+                    if (resultIsBigInteger) {
+                        resultFloat = double(resultInt);
+                        resultIsBigInteger = false;
+                    }
+                    if (tmpFactor.is<double>()) 
+                        resultFloat /= tmpFactor.as<double>();
+                    else if (tmpFactor.is<BigInteger>())
+                        resultFloat /= double(tmpFactor.as<BigInteger>());
+                    else if (tmpFactor.is<bool>()) {    //nothing to do
 
+                    }
+                    iDIV++;
+                } else if (tmpIndexOfIDIV == min0) {   
+                    if (tmpFactor.is<BigInteger>()) {
+                        resultInt /= tmpFactor.as<BigInteger>();
+                    } else if (tmpFactor.is<bool>()) {      //nothing to do
+
+                    }
+                    iIDIV++;
+                } else if (tmpIndexOfMOD == min0) {
+                    if (tmpFactor.is<BigInteger>()) {
+                        resultInt %= tmpFactor.as<BigInteger>();
+                    } else if (tmpFactor.is<bool>()) {
+                        resultInt = BigInteger("0");
+                    }
+                    iMOD++;
+                }
+                iFactor++;
+            }
+            if (resultIsBigInteger) 
+                return resultInt;
+            else 
+                return resultFloat;
+           
         } else {
             return visit(ctx->factor()[0]);
         }
@@ -345,11 +603,16 @@ class EvalVisitor: public Python3BaseVisitor {
             return 0;   //
         } else {
             antlrcpp::Any value = visit(ctx->atom());
+            /*  debug: checking the name of variable visited
+            if (value.is<std::string>())
+                std::cout << value.as<std::string>() << std::endl;
+                */
             if (value.is<std::string>() && (value.as<std::string>()[0] != '"' || value.as<std::string>()[0] != '\'')) { //the value is a variable name
                 std::string variableName = value.as<std::string>();
                 for (int j = Variables.size() - 1; j >= 0; j--) {
                     if (Variables[j].count(variableName)) {
                         value = Variables[j][variableName];
+
                     }
                 }
             }
