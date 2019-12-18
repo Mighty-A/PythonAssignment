@@ -10,6 +10,21 @@
 #include <vector>
 
 std::vector<std::map<std::string, antlrcpp::Any>> Variables;
+std::map<std::string, Python3Parser::FuncdefContext *> Function;
+/**********///Attention!
+bool useVariableAsLvalue = false;
+/*
+every time trying to use a variable in Variables as a lvalue,
+please make the bool value (useVariableAsValue) true before visit(ctx-><>()) 
+so the visit fuction will return a pointer pointing to the space of that variable
+and make the bool value false after using
+
+PLUS: Although it is really bad code style to do that, but as the DDL looming, I have to use
+such fool way to cover the bug I meet.
+
+qwq         -yhy
+*/
+
 class EvalVisitor: public Python3BaseVisitor {
     int MinOfFour(int a, int b, int c, int d) {
         return std::min(a, std::min(b, std::min(c, d)));
@@ -34,11 +49,11 @@ class EvalVisitor: public Python3BaseVisitor {
     antlrcpp::Any visitTypedargslist(Python3Parser::TypedargslistContext* ctx) override;
     antlrcpp::Any visitTfpdef(Python3Parser::TfpdefContext* ctx) override;
     
-
+    */
     antlrcpp::Any visitStmt(Python3Parser::StmtContext* ctx) override {     //visit simple_stmt and compound_stmt
         return visitChildren(ctx);
     }
-    
+    /*
     antlrcpp::Any visitSimple_stmt(Python3Parser::Simple_stmtContext* ctx) override {       //visit small_stmt
         return visitChildren(ctx);
     }
@@ -48,22 +63,147 @@ class EvalVisitor: public Python3BaseVisitor {
     */
     antlrcpp::Any visitExpr_stmt(Python3Parser::Expr_stmtContext* ctx) override {
         if (ctx->augassign()) {
-            antlrcpp::Any left = visit(ctx->testlist(0));
+            useVariableAsLvalue = true;
+            antlrcpp::Any *tmpPointer = visit(ctx->testlist(0)).as<antlrcpp::Any*>();
+            antlrcpp::Any &left = *tmpPointer;
+            useVariableAsLvalue = false;
             antlrcpp::Any right = visit(ctx->testlist(1));
             antlrcpp::Any it = visit(ctx->augassign());
             
             switch(it.as<int>()) {                                //incomplete: calculation of 
-                case Python3Parser::ADD_ASSIGN:
+                case 0:{
+                    if (left.is<std::string>()) {
+                        std::string tmpLeft = left.as<std::string>();
+                        std::string tmpRight = right.as<std::string>();
+                        tmpRight.erase(0, 1);
+                        tmpLeft.erase(tmpLeft.length() - 1, 1);
+                        tmpLeft = tmpLeft + tmpRight;
+                        left = tmpLeft;
+                    } else if (left.is<double>()) {
+                        double tmpLeft = left.as<double>();
+                        if (right.is<double>()) {
+                            double tmpRight = right.as<double>();
+                            tmpLeft += tmpRight;
+                        } else if (right.is<BigInteger>()) {
+                            tmpLeft += double(right.as<BigInteger>());
+                        } else if (right.is<bool>()) {
+                            if (right.as<bool>()) 
+                                tmpLeft += 1;
+                        }
+                        left = tmpLeft;
+                    } else if (left.is<BigInteger>()) {
+                        BigInteger tmpLeft = left.as<BigInteger>();
+                        if (right.is<BigInteger>()) {
+                            tmpLeft += right.as<BigInteger>();
+                        } else if (right.is<bool>()){
+                            if (right.as<bool>()) {
+                                BigInteger one("1");
+                                tmpLeft += one;
+                            }
+                        }
+                        left = tmpLeft;
+                    }
+                }
                     break;
-                case Python3Parser::SUB_ASSIGN:
+                case 1: {
+                    if (left.is<double>()) {
+                        double tmpLeft = left.as<double>();
+                        if (right.is<double>()) {
+                            double tmpRight = right.as<double>();
+                            tmpLeft -= tmpRight;
+                        } else if (right.is<BigInteger>()) {
+                            tmpLeft -= double(right.as<BigInteger>());
+                        } else if (right.is<bool>()) {
+                            if (right.as<bool>())
+                                tmpLeft -= 1;
+                        }
+                        left = tmpLeft;
+                    } else if (left.is<BigInteger>()) {
+                        BigInteger tmpLeft = left.as<BigInteger>();
+                        if (right.is<BigInteger>()) {
+                            tmpLeft -= right.as<BigInteger>();
+                        } else if (right.is<bool>()) {
+                            if (right.as<bool>()) {
+                                BigInteger one("1");
+                                tmpLeft -= one;
+                            }
+                        }
+                        left = tmpLeft;
+                    }
+                }
                     break;
-                case Python3Parser::MULT_ASSIGN:
+                case 2: {
+                    if (left.is<std::string>()) {
+                        std::string tmpLeft = left.as<std::string>();
+                        BigInteger tmpRight = right.as<BigInteger>();
+                        BigInteger one("1");
+                        std::string copy = tmpLeft;
+                        copy.erase(0, 1);
+                        copy.erase(copy.length() - 1, 1);
+                        tmpLeft = "";
+                        tmpLeft += '"';
+                        for (BigInteger i("0"); i < tmpRight; i = i + one) {
+                            tmpLeft += copy;
+                        }
+                        tmpLeft += '"';
+                        left = tmpLeft;
+                    } else if (left.is<double>()) {
+                        double tmpLeft = left.as<double>();
+                        if (right.is<double>()) {
+                            double tmpRight = right.as<double>();
+                            tmpLeft *= tmpRight;
+                        } else if (right.is<BigInteger>()) {
+                            tmpLeft *= double(right.as<BigInteger>());
+                        } else if (right.is<bool>()) {
+                            if (!right.as<bool>())
+                                tmpLeft *= 0;
+                        }
+                        left = tmpLeft;
+                    } else if (left.is<BigInteger>()) {
+                        BigInteger tmpLeft = left.as<BigInteger>();
+                        if (right.is<BigInteger>()) {
+                            tmpLeft *= right.as<BigInteger>();
+                        } else if (right.is<bool>()) {
+                            if (!right.as<bool>()) {
+                                BigInteger zero("0");
+                                tmpLeft = zero;
+                            }
+                        }
+                        left = tmpLeft;
+                    }
+                }
                     break;
-                case Python3Parser::DIV_ASSIGN:
+                case 3:{
+                    if (left.is<double>()) {
+                        double tmpLeft = left.as<double>();
+                        if (right.is<double>()) {
+                            double tmpRight = right.as<double>();
+                            tmpLeft /= tmpRight;
+                        } else if (right.is<BigInteger>()) {
+                            tmpLeft /= double(right.as<BigInteger>());
+                        } 
+                        left = tmpLeft;
+                    }
+                }
                     break;
-                case Python3Parser::IDIV_ASSIGN:
+                case 4: {
+                    if (left.is<BigInteger>()) {
+                        BigInteger tmpLeft = left.as<BigInteger>();
+                        if (right.is<BigInteger>()) {
+                            tmpLeft /= right.as<BigInteger>();
+                            left = tmpLeft;
+                        }
+                    }
+                }
                     break;
-                case Python3Parser::MOD_ASSIGN:
+                case 5:
+                    if (left.is<BigInteger>()) {
+                        BigInteger tmpLeft = left.as<BigInteger>();
+                        if (right.is<BigInteger>()) {
+                            tmpLeft %= right.as<BigInteger>();
+                        }
+                        left = tmpLeft;
+                    }
                     break;
             }
             return 0; //
@@ -71,11 +211,22 @@ class EvalVisitor: public Python3BaseVisitor {
             int length = ctx->testlist().size();
             antlrcpp::Any value = visit(ctx->testlist(length - 1));
             for (int i = length - 2; i >= 0; i--) {
-                /*
+                useVariableAsLvalue = true;
+                antlrcpp::Any tmpVariable = visit(ctx->testlist(i));
+                useVariableAsLvalue = false;
+                if (tmpVariable.is<std::string>()) {
+                    Variables[Variables.size() - 1][tmpVariable.as<std::string>()] = value;
+                } else if (tmpVariable.is<antlrcpp::Any *>()) {
+                    antlrcpp::Any* tmpPointer;
+                    tmpPointer = tmpVariable.as<antlrcpp::Any *>();
+                    *tmpPointer = value;
+                }
+                /*  wrong
                 std::vector<antlrcpp::Any>* tmpTest = visit(ctx->testlist(i)).as<std::vector<antlrcpp::Any>*>();
                 bool flag = false;       //has been used
                 for (int k = 0; k < tmpTest->size(); k++) {
                     */
+                   /*
                     bool flag = false;
                     std::string variableName = visit(ctx->testlist(i)).as<std::string>();
                     for (int j = Variables.size() - 1; j >= 0; j--) {
@@ -92,7 +243,7 @@ class EvalVisitor: public Python3BaseVisitor {
                     if (!flag) {
                         Variables[Variables.size() - 1][variableName] = value;
                     }
-                
+                */
                 //delete tmpTest;
             }
             return value;
@@ -102,25 +253,28 @@ class EvalVisitor: public Python3BaseVisitor {
     
     antlrcpp::Any visitAugassign(Python3Parser::AugassignContext* ctx) override {
         if (ctx->ADD_ASSIGN()) 
-            return Python3Parser::ADD_ASSIGN;
+            return 0;
         if (ctx->SUB_ASSIGN())
-            return Python3Parser::SUB_ASSIGN;
+            return 1;
         if (ctx->MULT_ASSIGN())
-            return Python3Parser::MULT_ASSIGN;
+            return 2;
         if (ctx->DIV_ASSIGN())
-            return Python3Parser::DIV_ASSIGN;
+            return 3;
         if (ctx->IDIV_ASSIGN())
-            return Python3Parser::IDIV_ASSIGN;
+            return 4;
         if (ctx->MOD_ASSIGN())
-            return Python3Parser::MOD_ASSIGN;
+            return 5;
     }
     /*
     antlrcpp::Any visitFlow_stmt(Python3Parser::Flow_stmtContext* ctx) override;
     antlrcpp::Any visitBreak_stmt(Python3Parser::Break_stmtContext* ctx) override;
     antlrcpp::Any visitContinue_stmt(Python3Parser::Continue_stmtContext* ctx) override;
     antlrcpp::Any visitReturn_stmt(Python3Parser::Return_stmtContext* ctx) override;
-    antlrcpp::Any visitCompound_stmt(Python3Parser::Compound_stmtContext* ctx) override;
-    
+    */
+    antlrcpp::Any visitCompound_stmt(Python3Parser::Compound_stmtContext* ctx) override {
+        return visitChildren(ctx);
+    }
+    /*
     antlrcpp::Any visitIf_stmt(Python3Parser::If_stmtContext* ctx) override;
     antlrcpp::Any visitWhile_stmt(Python3Parser::While_stmtContext* ctx) override;
     antlrcpp::Any visitSuite(Python3Parser::SuiteContext* ctx) override;*/
@@ -130,6 +284,31 @@ class EvalVisitor: public Python3BaseVisitor {
     }
     antlrcpp::Any visitOr_test(Python3Parser::Or_testContext* ctx) override {
         if (ctx->and_test().size() > 1) {                   //incompelete
+            bool result = false;
+            for (int i = 0; i < ctx->and_test().size(); i++) {
+                antlrcpp::Any tmpTest = visit(ctx->and_test(i));
+                if (tmpTest.is<BigInteger>()) {
+                    BigInteger tmpInt = tmpTest.as<BigInteger>();
+                    BigInteger zero("0");
+                    BigInteger zero1("-0"); // to avoid some bad bug caused by the clas BigInteger
+                    if (tmpInt != zero && tmpInt != zero1) {
+                        result = true;
+                        return result;
+                    }
+                } else if (tmpTest.is<double>()) {
+                    double tmpFloat = tmpTest.as<double>();
+                    if (tmpFloat != 0) {
+                        result = true;
+                        return result;
+                    }
+                } else if (tmpTest.is<bool>()) {
+                    if (tmpTest.as<bool>()) {
+                        result = true;;
+                        return result;
+                    }
+                }
+            }
+            return result;
 
         } else {
             return visit(ctx->and_test()[0]);
@@ -137,14 +316,69 @@ class EvalVisitor: public Python3BaseVisitor {
     }
     antlrcpp::Any visitAnd_test(Python3Parser::And_testContext* ctx) override {
         if (ctx->not_test().size() > 1) {
-                                            //incomplete
+            bool result = true;
+            for (int i = 0; i < ctx->not_test().size(); i++) {
+                antlrcpp::Any tmpTest = visit(ctx->not_test(i));
+                if (tmpTest.is<BigInteger>()) {
+                    BigInteger tmpInt = tmpTest.as<BigInteger>();
+                    BigInteger zero("0");
+                    BigInteger zero1("-0"); // to avoid some bad bug caused by the clas BigInteger
+                    if (tmpInt == zero || tmpInt == zero1) {
+                        result = false;
+                        return result;
+                    } 
+                } else if (tmpTest.is<double>()) {
+                    double tmpFloat = tmpTest.as<double>();
+                    if (tmpFloat == 0) {
+                        result = false;
+                        return result;
+                    }
+                } else if (tmpTest.is<bool>()) {
+                    if (!tmpTest.as<bool>()) {
+                        result = false;
+                        return result;
+                    }
+                }
+            }
+            return result;
         } else {
             return visit(ctx->not_test()[0]);
         }
     }
     antlrcpp::Any visitNot_test(Python3Parser::Not_testContext* ctx) override {
-        if (ctx->not_test()) {              //incomplete
+        if (ctx->not_test()) {              //complete
+            antlrcpp::Any tmpTest = visit(ctx->not_test());
+            bool result;
+            if (tmpTest.is<BigInteger>()) {
+                BigInteger tmpInt = tmpTest.as<BigInteger>();
+                BigInteger zero("0");
+                BigInteger zero1("-0");  // to avoid some bad bug caused by the clas BigInteger
 
+                if (tmpInt == zero || tmpInt == zero1) {
+                    result = false;
+                    return result;
+                } else {
+                    result = true;
+                    return result;
+                }
+            } else if (tmpTest.is<double>()) {
+                double tmpFloat = tmpTest.as<double>();
+                if (tmpFloat == 0) {
+                    result = false;
+                    return result;
+                } else {
+                    result = true;
+                    return result;
+                }
+            } else if (tmpTest.is<bool>()) {
+                if (tmpTest.as<bool>()) {
+                    result = false;
+                    return result;
+                } else {
+                    result = true;
+                    return result;
+                }
+            }
         } else {
             return visit(ctx->comparison());
         }
@@ -536,8 +770,39 @@ class EvalVisitor: public Python3BaseVisitor {
         }
     }
     antlrcpp::Any visitFactor(Python3Parser::FactorContext* ctx) override {
-        if (ctx->factor()) {
-
+        if (ctx->MINUS()) {
+            antlrcpp::Any tmpFactor = visit(ctx->factor());
+            if (tmpFactor.is<BigInteger>()) {
+                BigInteger tmp = tmpFactor.as<BigInteger>();
+                BigInteger zero("0");
+                tmp = zero - tmp;
+                return tmp;
+            } else if (tmpFactor.is<bool>()){
+                if (tmpFactor.as<bool>()) {
+                    BigInteger a("-1");
+                    return a;
+                } else {
+                    BigInteger a("0");
+                    return a;
+                }
+            } else if (tmpFactor.is<double>()) {
+                double tmp = tmpFactor.as<double>();
+                tmp = - tmp;
+                return tmp;
+            }
+        } else if (ctx->ADD()) {
+            antlrcpp::Any tmpFactor = visit(ctx->factor());
+            if (tmpFactor.is<bool>()) {
+                if (tmpFactor.as<bool>()) {
+                    BigInteger a("1");
+                    return a;
+                } else {
+                    BigInteger a("0");
+                    return a;
+                }
+            } else {
+                return visit(ctx->factor());
+            }
         } else {
             return visit(ctx->atom_expr());
         }
@@ -580,25 +845,118 @@ class EvalVisitor: public Python3BaseVisitor {
                                 }
                             }
                         }
-                        std::cout << ' ';
+                        if (i != tmp->size() - 1) 
+                            std::cout << ' ';
                         continue;
                     }
                     if ((*tmp)[i].is<bool>()) {
-                        std::cout << (((*tmp)[i].as<bool>()) ? "True" : "False") << ' ';
+                        std::cout << (((*tmp)[i].as<bool>()) ? "True" : "False");
+                        if (i != tmp->size() - 1)
+                            std::cout << ' ';
+
                         continue;
                     }
                     if ((*tmp)[i].is<BigInteger>()) {
-                        std::cout << (*tmp)[i].as<BigInteger>() << ' ';
+                        std::cout << (*tmp)[i].as<BigInteger>();
+                        if (i != tmp->size() - 1)
+                            std::cout << ' ';
+
                         continue;
                     }
                     if ((*tmp)[i].is<double>()) {
-                        std::cout << std::fixed << std::setprecision(6) << (*tmp)[i].as<double>() << ' ';
+                        std::cout << std::fixed << std::setprecision(6) << (*tmp)[i].as<double>();
+                        if (i != tmp->size() - 1)
+                            std::cout << ' ';
+
                         continue;
                     }
                }
                std::cout << std::endl;
                delete tmp;
                return 0;
+            } else if (funcName == "int") {
+                antlrcpp::Any arg = (*tmp)[0];
+                if (arg.is<double>()) {
+                    int tmp = int(arg.as<double>());
+                    BigInteger result(tmp);
+                    return result;
+                } else if (arg.is<bool>()) {
+                    if (arg.as<bool>()) {
+                        BigInteger one("1");
+                        return one;
+                    } else {
+                        BigInteger zero("0");
+                        return zero;
+                    }
+                } else if (arg.is<std::string>()) {
+                    BigInteger result(arg.as<std::string>());
+                    return result;
+                }
+                return 0;
+            } else if (funcName == "float") {
+                antlrcpp::Any arg = (*tmp)[0];
+                if (arg.is<BigInteger>()) {
+                    return double(arg.as<BigInteger>());
+                } else if (arg.is<bool>()) {
+                    if (arg.as<bool>()) {
+                        double tmp = 1;
+                        return tmp;
+                    } else {
+                        double tmp = 0;
+                        return tmp;
+                    }
+                } else if (arg.is<std::string>()) {
+                    std::string floatString = arg.as<std::string>();
+                    double result = 0;
+                    int j = 0;
+                    for (j = 0; j < floatString.size(); j++) {
+                        if (floatString[j] != '.') {
+                            result *= 10;
+                            result += (floatString[j] - '0');
+                        } else break;
+                    }
+                    for (int k = j + 1; k < floatString.size(); k++) {
+                        result += double(floatString[k] - '0') * pow(10, j - k);
+                    }
+                    return result;
+                }
+                return 0;
+            } else if (funcName == "str") {
+                antlrcpp::Any arg = (*tmp)[0];
+                if (arg.is<BigInteger>()) {
+                    return std::string(arg.as<BigInteger>());
+                } else if (arg.is<double>()) {
+                    double tmp = arg.as<double>();
+                    return std::to_string(tmp);
+                } else if (arg.is<bool>()) {
+                    if (arg.as<bool>()) {
+                        std::string tmp = "True";
+                        return tmp;
+                    } else {
+                        std::string tmp = "False";
+                        return tmp;
+                    }
+                } 
+                return 0;
+            } else if (funcName == "bool") {
+                antlrcpp::Any arg = (*tmp)[0];
+                if (arg.is<BigInteger>()) {
+                    BigInteger zero("0");
+                    BigInteger zero1("-0");
+                    if (arg.as<BigInteger>() == zero || arg.as<BigInteger>() == zero1) {
+                        return false;
+                    } else return true;
+                } else if (arg.is<double>()) {
+                    if (arg.as<double>() == 0) 
+                        return false;
+                    else 
+                        return true;
+                } else if (arg.is<std::string>()) {
+                    if (arg.as<std::string>() == "") 
+                        return false;
+                    else 
+                        return true;
+                }
             }
             return 0;   //
         } else {
@@ -611,8 +969,13 @@ class EvalVisitor: public Python3BaseVisitor {
                 std::string variableName = value.as<std::string>();
                 for (int j = Variables.size() - 1; j >= 0; j--) {
                     if (Variables[j].count(variableName)) {
-                        value = Variables[j][variableName];
-
+                        if (useVariableAsLvalue) {
+                            antlrcpp::Any *value1 = &Variables[j][variableName];
+                            return value1;
+                        } else  {
+                            antlrcpp::Any value1 = Variables[j][variableName];
+                            return value1;
+                        }
                     }
                 }
             }
@@ -656,14 +1019,18 @@ class EvalVisitor: public Python3BaseVisitor {
             }
         }
         if (ctx->STRING().size() > 0) {
-            std::string tmp;
-            for (int i = 0; i < ctx->STRING().size(); i++) {
-                tmp += ctx->STRING(i)->toString();
+            std::string tmp = ctx->STRING(0)->toString();
+            for (int i = 1; i < ctx->STRING().size(); i++) {
+                tmp.erase(tmp.size() - 1, 1);
+                std::string a = ctx->STRING(i)->toString();
+                a.erase(0, 1);
+                tmp += a;
             }
             return tmp;
         }
         if (ctx->NONE()){
-            bool tmp = false;
+            std::string tmp;
+            tmp = "\"None\"";
             return tmp;
         }
         if (ctx->TRUE()) {

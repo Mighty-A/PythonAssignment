@@ -32,7 +32,17 @@ public:
             }
         }
     }
-
+    BigInteger(int number) {
+        if (number < 0) {
+            is_positive = false;
+        } else {
+            is_positive = true;
+        }
+        do {
+            num.push_back(number % 10 + '0');
+            number /= 10;
+        } while (number != 0);
+    }
     //Display :output for test  
     void Display()
     {
@@ -149,7 +159,7 @@ public:
         std::string tmp;
         if (!is_positive && (num.length() == 1 && num[0] == '0'))
             tmp += '-';
-        for (int i = num.length() - 1; i >= 0; i --) 
+        for (int i = num.length() - 1; i >= 0; i--) 
             tmp += num[i];
         return tmp;
     }
