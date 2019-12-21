@@ -11,7 +11,21 @@
 
 std::vector<std::map<std::string, antlrcpp::Any>> Variables;
 std::map<std::string, Python3Parser::FuncdefContext *> Function;
+
+int callStack = 0;      //
+
+int anonymousArgIndex = 0;
+std::string AnonymousArg[] = {"000", "001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013", "014", "015", "016", "017", "018", "019", "020"};
 /**********///Attention!
+/*set the int type as warning value
+if a visit return int 0 means nothing wrong
+1 means break
+2 means continue
+3 means return(in python)
+110 means there is something wrong in this visit
+*/
+
+
 bool useVariableAsLvalue = false;
 /*
 every time trying to use a variable in Variables as a lvalue,
@@ -34,40 +48,84 @@ class EvalVisitor: public Python3BaseVisitor {
     antlrcpp::Any visitFile_input(Python3Parser::File_inputContext *ctx) override {
         std::map<std::string, antlrcpp::Any> GlobalVaraible;
         Variables.push_back(GlobalVaraible);
-        std::vector<Python3Parser::StmtContext *> stmtlist;
-        stmtlist = ctx->stmt();
-        for (auto i : stmtlist) { //visit all the stmt
-            visit(i);
+        for (int i = 0; i < ctx->stmt().size(); i++) { //visit all the stmt
+            antlrcpp::Any tmp = visit(ctx->stmt(i));
+            if (tmp.is<std::vector<antlrcpp::Any>*>() && tmp.as<std::vector<antlrcpp::Any>*>()) {
+                delete tmp.as<std::vector<antlrcpp::Any>*>();
+            }
         }
         return 0;
         
     }
-    /*
     
-    antlrcpp::Any visitFuncdef(Python3Parser::FuncdefContext* ctx) override;
-    antlrcpp::Any visitParameters(Python3Parser::ParametersContext* ctx) override;
-    antlrcpp::Any visitTypedargslist(Python3Parser::TypedargslistContext* ctx) override;
-    antlrcpp::Any visitTfpdef(Python3Parser::TfpdefContext* ctx) override;
-    
-    */
-    antlrcpp::Any visitStmt(Python3Parser::StmtContext* ctx) override {     //visit simple_stmt and compound_stmt
-        return visitChildren(ctx);
+    antlrcpp::Any visitFuncdef(Python3Parser::FuncdefContext* ctx) override {
+        std::string tmpFuncName = ctx->NAME()->toString();
+        if (Function.count(tmpFuncName)) {      //calling the function
+            if (ctx->parameters())
+                visit(ctx->parameters());   //set parameters
+            callStack++;
+            return visit(ctx->suite());
+        } else {                                //definiton
+            Function[tmpFuncName] = ctx;
+            return 0;
+        }
     }
-    /*
+    
+    antlrcpp::Any visitParameters(Python3Parser::ParametersContext* ctx) override {
+        if (ctx->typedargslist()) {
+            return visit(ctx->typedargslist());
+        } else {
+            return 0;
+        }
+    }
+    antlrcpp::Any visitTypedargslist(Python3Parser::TypedargslistContext* ctx) override {
+        int i = 0;
+        while (i < ctx->tfpdef().size() && Variables[Variables.size() - 1].count(AnonymousArg[i])) {            //set the corresponding arg
+            Variables[Variables.size() - 1][visit(ctx->tfpdef(i)).as<std::string>()] = Variables[Variables.size() - 1][AnonymousArg[i]];
+            i++;
+        }
+        int j = 0;
+        while (i < ctx->tfpdef().size()) {      //deal with the args that are assign or default
+            std::string tmpArgName = visit(ctx->tfpdef(i)).as<std::string>();
+            if (!Variables[Variables.size() - 1].count(tmpArgName)) {   //default;
+                Variables[Variables.size() - 1][tmpArgName] = visit(ctx->test(j));
+            }
+            i++;
+            j++;
+        }
+        return 0;
+    }
+    antlrcpp::Any visitTfpdef(Python3Parser::TfpdefContext* ctx) override {
+        return ctx->NAME()->toString();
+    }
+    
+    antlrcpp::Any visitStmt(Python3Parser::StmtContext* ctx) override {     //visit simple_stmt and compound_stmt
+        if (ctx->simple_stmt()) {
+            return visit(ctx->simple_stmt());
+        } else if (ctx->compound_stmt()) {
+            return visit(ctx->compound_stmt());
+        }
+    }
     antlrcpp::Any visitSimple_stmt(Python3Parser::Simple_stmtContext* ctx) override {       //visit small_stmt
-        return visitChildren(ctx);
+        return visit(ctx->small_stmt());
     }
     antlrcpp::Any visitSmall_stmt(Python3Parser::Small_stmtContext* ctx) override { //visit expr_stmt adn flow_stmt 
-        return visitChildren(ctx);                                           //**warning: continue break return still incomplete
+        if (ctx->expr_stmt()) {
+            return visit(ctx->expr_stmt());
+        } else {
+            return visit(ctx->flow_stmt());
+        }
     }
-    */
     antlrcpp::Any visitExpr_stmt(Python3Parser::Expr_stmtContext* ctx) override {
-        if (ctx->augassign()) {
+        if (ctx->augassign()) {                                     //deal with augassign
             useVariableAsLvalue = true;
-            antlrcpp::Any *tmpPointer = visit(ctx->testlist(0)).as<antlrcpp::Any*>();
-            antlrcpp::Any &left = *tmpPointer;
+            std::vector<antlrcpp::Any>* tmpPointer = visit(ctx->testlist(0)).as<std::vector<antlrcpp::Any>*>();
+            antlrcpp::Any &left = *((*tmpPointer)[0].as<antlrcpp::Any*>());
+            delete tmpPointer;
             useVariableAsLvalue = false;
-            antlrcpp::Any right = visit(ctx->testlist(1));
+            tmpPointer = visit(ctx->testlist(1)).as<std::vector<antlrcpp::Any>*>();
+            antlrcpp::Any right = (*tmpPointer)[0];
+            delete tmpPointer;
             antlrcpp::Any it = visit(ctx->augassign());
             
             switch(it.as<int>()) {                                //incomplete: calculation of 
@@ -209,44 +267,32 @@ class EvalVisitor: public Python3BaseVisitor {
             return 0; //
         } else {                //incomplete
             int length = ctx->testlist().size();
-            antlrcpp::Any value = visit(ctx->testlist(length - 1));
-            for (int i = length - 2; i >= 0; i--) {
-                useVariableAsLvalue = true;
-                antlrcpp::Any tmpVariable = visit(ctx->testlist(i));
-                useVariableAsLvalue = false;
-                if (tmpVariable.is<std::string>()) {
-                    Variables[Variables.size() - 1][tmpVariable.as<std::string>()] = value;
-                } else if (tmpVariable.is<antlrcpp::Any *>()) {
-                    antlrcpp::Any* tmpPointer;
-                    tmpPointer = tmpVariable.as<antlrcpp::Any *>();
-                    *tmpPointer = value;
-                }
-                /*  wrong
-                std::vector<antlrcpp::Any>* tmpTest = visit(ctx->testlist(i)).as<std::vector<antlrcpp::Any>*>();
-                bool flag = false;       //has been used
-                for (int k = 0; k < tmpTest->size(); k++) {
-                    */
-                   /*
-                    bool flag = false;
-                    std::string variableName = visit(ctx->testlist(i)).as<std::string>();
-                    for (int j = Variables.size() - 1; j >= 0; j--) {
-                        if (Variables[j].count(variableName)) {
-
-                            Variables[j][variableName] = value;          //update or new a varible
-                            flag = true;
-                            
-                            break;
+            if (length == 1) {
+                return visit(ctx->testlist(0));
+            } else {
+                antlrcpp::Any value = visit(ctx->testlist(length - 1));
+                std::vector<antlrcpp::Any>* Pointer = value.as<std::vector<antlrcpp::Any>*>();
+                std::vector<antlrcpp::Any> temp = *Pointer;
+                for (int i = length - 2; i >= 0; i--) {
+                    useVariableAsLvalue = true;
+                    antlrcpp::Any tmpVariable = visit(ctx->testlist(i));
+                    useVariableAsLvalue = false;
+                    std::vector<antlrcpp::Any>* tmpPointer = tmpVariable.as<std::vector<antlrcpp::Any>*>();
+                    for (int j = 0; j < Pointer->size(); j++) {
+                        antlrcpp::Any tmp = (*tmpPointer)[j];
+                        if (tmp.is<std::string>()) {
+                            Variables[Variables.size() - 1][tmp.as<std::string>()] = (*Pointer)[j];
+                        } else if (tmp.is<antlrcpp::Any*>()) {
+                            *(tmp.as<antlrcpp::Any*>()) = (*Pointer)[j];
                         }
 
+                    }
+                    delete tmpPointer;
+                }
+                delete Pointer;
 
-                    }
-                    if (!flag) {
-                        Variables[Variables.size() - 1][variableName] = value;
-                    }
-                */
-                //delete tmpTest;
+                return temp;
             }
-            return value;
         }
     }
     
@@ -265,19 +311,144 @@ class EvalVisitor: public Python3BaseVisitor {
         if (ctx->MOD_ASSIGN())
             return 5;
     }
-    /*
-    antlrcpp::Any visitFlow_stmt(Python3Parser::Flow_stmtContext* ctx) override;
-    antlrcpp::Any visitBreak_stmt(Python3Parser::Break_stmtContext* ctx) override;
-    antlrcpp::Any visitContinue_stmt(Python3Parser::Continue_stmtContext* ctx) override;
-    antlrcpp::Any visitReturn_stmt(Python3Parser::Return_stmtContext* ctx) override;
-    */
-    antlrcpp::Any visitCompound_stmt(Python3Parser::Compound_stmtContext* ctx) override {
-        return visitChildren(ctx);
+    antlrcpp::Any visitFlow_stmt(Python3Parser::Flow_stmtContext* ctx) override {
+        if (ctx->break_stmt()) {
+            return 1;
+        } else if (ctx->continue_stmt()) {
+            return 2;
+        } else if (ctx->return_stmt()) {
+            callStack--;
+            return visit(ctx->return_stmt());
+        }
     }
     /*
-    antlrcpp::Any visitIf_stmt(Python3Parser::If_stmtContext* ctx) override;
-    antlrcpp::Any visitWhile_stmt(Python3Parser::While_stmtContext* ctx) override;
-    antlrcpp::Any visitSuite(Python3Parser::SuiteContext* ctx) override;*/
+    antlrcpp::Any visitBreak_stmt(Python3Parser::Break_stmtContext* ctx) override;
+    antlrcpp::Any visitContinue_stmt(Python3Parser::Continue_stmtContext* ctx) override;
+    */
+    antlrcpp::Any visitReturn_stmt(Python3Parser::Return_stmtContext* ctx) override {
+        if (ctx->testlist()) {
+            return visit(ctx->testlist());
+        } else {
+            return -1;          //no return function
+        }
+    }
+    
+    antlrcpp::Any visitCompound_stmt(Python3Parser::Compound_stmtContext* ctx) override {
+        if (ctx->if_stmt()) {
+            antlrcpp::Any a = visit(ctx->if_stmt());
+            return a;
+        } else if (ctx->while_stmt()) {
+            antlrcpp::Any a = visit(ctx->while_stmt());
+            return a;
+        } else if (ctx->funcdef()) {
+            antlrcpp::Any a = visit(ctx->funcdef());
+            return a;
+        }
+    }
+    
+    antlrcpp::Any visitIf_stmt(Python3Parser::If_stmtContext* ctx) override {
+        std::map<std::string, antlrcpp::Any> LocalVariable;
+        Variables.push_back(LocalVariable);
+        int totalSuite = ctx->suite().size();
+        if (ctx->ELSE())
+            totalSuite--;
+        int i = 0;
+        while (i < totalSuite) {
+            antlrcpp::Any tmp = visit(ctx->test(i));
+            bool flag = false;
+            if (tmp.is<bool>() && tmp.as<bool>()) {
+                flag = true;
+            } else if (tmp.is<BigInteger>()) {
+                BigInteger zero("0");
+                BigInteger zero1("-0");
+                if (tmp.as<BigInteger>() != zero && tmp.as<BigInteger>() != zero1) {
+                    flag = true;
+                }
+            } else if (tmp.is<double>() && tmp.as<double>() != 0) {
+                flag = true;
+            } else if (tmp.is<std::string>() && tmp.as<std::string>() != "") {
+                flag = true;
+            }
+            if (flag) {
+                antlrcpp::Any a = visit(ctx->suite(i));
+                Variables.pop_back();
+                return a;
+            }
+            i++;
+        }
+        if (ctx->ELSE()) {
+            antlrcpp::Any a = visit(ctx->suite(ctx->suite().size() - 1));
+            Variables.pop_back();
+            return a;
+        } else {
+            Variables.pop_back();
+            return 0;
+        }
+    }
+
+    antlrcpp::Any visitWhile_stmt(Python3Parser::While_stmtContext* ctx) override {
+        std::map<std::string, antlrcpp::Any> LocalVariable;
+        Variables.push_back(LocalVariable);
+        while (true) {
+            antlrcpp::Any tmp = visit(ctx->test());
+            bool flag = false;
+            int control = 0;
+            if (tmp.is<bool>() && tmp.as<bool>()) {
+                flag = true;
+            } else if (tmp.is<BigInteger>()) {
+                BigInteger zero("0");
+                BigInteger zero1("-0");
+                if (tmp.as<BigInteger>() != zero && tmp.as<BigInteger>() != zero1) {
+                    flag = true;
+                }
+            } else if (tmp.is<double>() && tmp.as<double>() != 0) {
+                flag = true;
+            } else if (tmp.is<std::string>() && tmp.as<std::string>() != "") {
+                flag = true;
+            }
+            if (flag) {
+                antlrcpp::Any returnFromSuite = visit(ctx->suite());
+                if (returnFromSuite.is<int>()) {
+                    if (returnFromSuite.as<int>() == 1){     //break
+                        Variables.pop_back();
+                        return 0;
+                    }
+                    else if (returnFromSuite.as<int>() == 2)//continue
+                        continue;
+                    else if (returnFromSuite.as<int>() == -1) {  //no value return 
+                        Variables.pop_back();
+                        return -1;
+                    }
+                } else if (returnFromSuite.is<std::vector<antlrcpp::Any>*>()) {
+                    Variables.pop_back();
+                    return returnFromSuite;
+                }
+            } else {
+                Variables.pop_back();
+                return 0;
+            }
+        }
+    }
+    
+    antlrcpp::Any visitSuite(Python3Parser::SuiteContext* ctx) override {
+        if (ctx->simple_stmt()) {
+            antlrcpp::Any tmp = visit(ctx->simple_stmt());
+            return tmp;
+        } else {
+            for (int i = 0; i < ctx->stmt().size(); i++) {
+                antlrcpp::Any tmp = visit(ctx->stmt(i));
+                if (tmp.is<int>()) {
+                    int flow = tmp.as<int>();
+                    if (flow == 1 || flow == 2)
+                        return flow;
+                } else if (tmp.is<std::vector<antlrcpp::Any>*>()) {      //return expr exit if
+                    return tmp;
+                }
+                
+            }
+            return 0;
+        }
+    }
     antlrcpp::Any visitTest(Python3Parser::TestContext* ctx) override {
 
         return visit(ctx->or_test());
@@ -812,6 +983,8 @@ class EvalVisitor: public Python3BaseVisitor {
         antlrcpp::Any tmpAtom = visit(ctx->atom());
         if (ctx->trailer()) {           //function call
             std::string funcName = tmpAtom.as<std::string>();
+            std::map<std::string, antlrcpp::Any> LocalVariable;
+            Variables.push_back(LocalVariable);
             antlrcpp::Any a = visit(ctx->trailer());
             std::vector<antlrcpp::Any>* tmp = a.as<std::vector<antlrcpp::Any>*>();
             if (funcName == "print") {
@@ -872,7 +1045,6 @@ class EvalVisitor: public Python3BaseVisitor {
                     }
                }
                std::cout << std::endl;
-               delete tmp;
                return 0;
             } else if (funcName == "int") {
                 antlrcpp::Any arg = (*tmp)[0];
@@ -952,13 +1124,18 @@ class EvalVisitor: public Python3BaseVisitor {
                     else 
                         return true;
                 } else if (arg.is<std::string>()) {
-                    if (arg.as<std::string>() == "") 
+                    if (arg.as<std::string>() == "")
                         return false;
                     else 
                         return true;
                 }
+            } else if (Function.count(funcName)) {          //call costom function
+                antlrcpp::Any returnValue = visit(Function[funcName]);  
+                Variables.pop_back();
+                return returnValue;
             }
-            return 0;   //
+            Variables.pop_back();
+            return tmp;   //
         } else {
             antlrcpp::Any value = visit(ctx->atom());
             /*  debug: checking the name of variable visited
@@ -981,10 +1158,14 @@ class EvalVisitor: public Python3BaseVisitor {
             }
             return value;
         }
-
     }
     antlrcpp::Any visitTrailer(Python3Parser::TrailerContext* ctx) override {
-        return visit(ctx->arglist());
+        if (ctx->arglist()) {
+            return visit(ctx->arglist());
+        } else {
+            std::vector<antlrcpp::Any>* NoArg = new std::vector<antlrcpp::Any>;
+            return NoArg;
+        }
     }
     
     antlrcpp::Any visitAtom(Python3Parser::AtomContext* ctx) override {
@@ -1046,32 +1227,45 @@ class EvalVisitor: public Python3BaseVisitor {
     }
     
     antlrcpp::Any visitTestlist(Python3Parser::TestlistContext* ctx) override {
-        return visit(ctx->test(0));
-        /*
-        std::vector<antlrcpp::Any>* tmpTest = new std::vector<antlrcpp::Any>;
-        for (int i = 0; i < ctx->test().size(); i++) {
-            antlrcpp::Any tmp = ctx->test(i);
-            tmpTest->push_back(tmp);
+        if (useVariableAsLvalue) {
+            std::vector<antlrcpp::Any>* tmpTest = new std::vector<antlrcpp::Any>;
+            for (int i = 0; i < ctx->test().size(); i++) {
+                antlrcpp::Any tmp = visit(ctx->test(i));
+                tmpTest->push_back(tmp);
+            }
+            return tmpTest;
+        } else {
+            std::vector<antlrcpp::Any>* tmpTest = new std::vector<antlrcpp::Any>;
+            for (int i = 0; i < ctx->test().size(); i++) {
+                antlrcpp::Any tmp = visit(ctx->test(i));
+                tmpTest->push_back(tmp);
+                if (tmp.is<int>() && tmp.as<int>() == 0) {
+                    delete tmpTest;
+                    return 0;
+                }
+            }
+            return tmpTest;
         }
-        return tmpTest;
-        */
     }
     
     antlrcpp::Any visitArglist(Python3Parser::ArglistContext* ctx) override {
         std::vector<antlrcpp::Any>* tmp = new std::vector<antlrcpp::Any>;
         for (int i = 0; i < ctx->argument().size(); i++) {
+            anonymousArgIndex = i;
             tmp->push_back(visit(ctx->argument(i)));
         }
+        anonymousArgIndex = 0;
         return tmp;
     }
     
     antlrcpp::Any visitArgument(Python3Parser::ArgumentContext* ctx) override {
+        antlrcpp::Any tmp = visit(ctx->test());
         if (ctx->NAME()) {          //positional 
-
+            Variables[Variables.size() - 1][ctx->NAME()->toString()] = tmp;
         } else {
-            
-            return visit(ctx->test());
+            Variables[Variables.size() - 1][AnonymousArg[anonymousArgIndex]] = tmp;
         }
+        return tmp;
     }
     
 };

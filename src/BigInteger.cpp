@@ -166,7 +166,7 @@ BigInteger operator/(const BigInteger& a, const BigInteger& b) {
         return tmp;
     }
     if (a.is_positive && b.is_positive || !a.is_positive && !b.is_positive) {
-        if (a < tmpb) {
+        if ((a < tmpb) && a.is_positive || a > tmpb && !a.is_positive) {
             tmp.is_positive = true;
             tmp.num += '0';
             return tmp;
