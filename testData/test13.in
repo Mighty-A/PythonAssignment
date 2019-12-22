@@ -1,0 +1,13 @@
+#the function of gcd
+def gcd(a, b):
+    if a < b:
+        a = a + b
+        b = a - b
+        a = a - b
+    while b != 0:
+        r = a % b
+        a = b
+        b = r
+    #print(a)
+    return a
+print(gcd(8, 12))
