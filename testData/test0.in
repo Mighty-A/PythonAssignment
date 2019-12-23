@@ -1,4 +1,4 @@
-a = "12123"
-b = 5
-b *= int(a)
+a = ""
+print(a)
+b = bool(a)
 print(b)

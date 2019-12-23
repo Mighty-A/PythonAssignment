@@ -1133,7 +1133,7 @@ class EvalVisitor: public Python3BaseVisitor {
                         std::string tmp = "\"False\"";
                         return tmp;
                     }
-                } 
+                }
                 return 0;
             } else if (funcName == "bool") {
                 Variables.pop_back();
@@ -1146,12 +1146,12 @@ class EvalVisitor: public Python3BaseVisitor {
                         return false;
                     } else return true;
                 } else if (arg.is<double>()) {
-                    if (arg.as<double>() == 0) 
+                    if (arg.as<double>() < 0.00000001) 
                         return false;
                     else 
                         return true;
                 } else if (arg.is<std::string>()) {
-                    if (arg.as<std::string>() == "")
+                    if (arg.as<std::string>() == "\"\"")
                         return false;
                     else 
                         return true;
