@@ -1,0 +1,10 @@
+def fun(a, b, c = "ok"):
+    c += a + b
+    if not a + b:
+        return c
+    else:
+        return c * 5
+a = ""
+b = ""
+print(fun("", "", c = "3"))
+print(fun("1", b = "3"))

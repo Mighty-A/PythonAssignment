@@ -1,4 +1,0 @@
-a = ""
-print(a)
-b = bool(a)
-print(b)

@@ -22,6 +22,7 @@ if a visit return int 0 means nothing wrong
 1 means break
 2 means continue
 3 means return(in python)
+4 means none
 110 means there is something wrong in this visit
 */
 
@@ -94,9 +95,9 @@ class EvalVisitor: public Python3BaseVisitor {
             std::string tmpArgName = visit(ctx->tfpdef(i)).as<std::string>();
             if (!Variables[Variables.size() - 1].count(tmpArgName)) {   //default;
                 Variables[Variables.size() - 1][tmpArgName] = visit(ctx->test(j));
+                j++;
             }
             i++;
-            j++;
         }
         return 0;
     }
@@ -158,13 +159,17 @@ class EvalVisitor: public Python3BaseVisitor {
                         BigInteger tmpLeft = left.as<BigInteger>();
                         if (right.is<BigInteger>()) {
                             tmpLeft += right.as<BigInteger>();
+                            left = tmpLeft;
                         } else if (right.is<bool>()){
                             if (right.as<bool>()) {
                                 BigInteger one("1");
                                 tmpLeft += one;
+                                left = tmpLeft;
                             }
+                        } else if (right.is<double>()) {
+                            double a = right.as<double>() + double(tmpLeft);
+                            left = a;
                         }
-                        left = tmpLeft;
                     }
                 }
                     break;
@@ -185,13 +190,17 @@ class EvalVisitor: public Python3BaseVisitor {
                         BigInteger tmpLeft = left.as<BigInteger>();
                         if (right.is<BigInteger>()) {
                             tmpLeft -= right.as<BigInteger>();
+                            left = tmpLeft;
                         } else if (right.is<bool>()) {
                             if (right.as<bool>()) {
                                 BigInteger one("1");
                                 tmpLeft -= one;
-                            }
+                                left = tmpLeft;
+                            } 
+                        } else if (right.is<double>()) {
+                            double a = double(tmpLeft) - right.as<double>();
+                            left = a;
                         }
-                        left = tmpLeft;
                     }
                 }
                     break;
@@ -226,13 +235,18 @@ class EvalVisitor: public Python3BaseVisitor {
                         BigInteger tmpLeft = left.as<BigInteger>();
                         if (right.is<BigInteger>()) {
                             tmpLeft *= right.as<BigInteger>();
+                            left = tmpLeft;
                         } else if (right.is<bool>()) {
                             if (!right.as<bool>()) {
                                 BigInteger zero("0");
                                 tmpLeft = zero;
+                                left = tmpLeft;
                             }
+                        } else if (right.is<double>()) {
+                            double a = double(tmpLeft) / right.as<double>();
+                            left = a;
                         }
-                        left = tmpLeft;
+                        
                     }
                 }
                     break;
@@ -246,7 +260,7 @@ class EvalVisitor: public Python3BaseVisitor {
                             tmpLeft /= double(right.as<BigInteger>());
                         } 
                         left = tmpLeft;
-                    }
+                    } 
                 }
                     break;
                 case 4: {
@@ -480,6 +494,11 @@ class EvalVisitor: public Python3BaseVisitor {
                         result = true;;
                         return result;
                     }
+                } else if (tmpTest.is<std::string>()) {
+                    if (tmpTest.as<std::string>() != "\"\"") {
+                        result = true;
+                        return result;
+                    }
                 }
             }
             return result;
@@ -509,6 +528,11 @@ class EvalVisitor: public Python3BaseVisitor {
                     }
                 } else if (tmpTest.is<bool>()) {
                     if (!tmpTest.as<bool>()) {
+                        result = false;
+                        return result;
+                    }
+                } else if (tmpTest.is<std::string>()) {
+                    if (tmpTest.as<std::string>() == "\"\"") {
                         result = false;
                         return result;
                     }
@@ -550,6 +574,15 @@ class EvalVisitor: public Python3BaseVisitor {
                     return result;
                 } else {
                     result = true;
+                    return result;
+                }
+            } else if (tmpTest.is<std::string>()) {
+                if (tmpTest.as<std::string>() == "\"\"") {
+                    result = true;
+                    return result;
+                }
+                else {
+                    result= false;
                     return result;
                 }
             }
@@ -1047,7 +1080,7 @@ class EvalVisitor: public Python3BaseVisitor {
 
                         continue;
                     } 
-                    if ((*tmp)[i].is<int>() && (*tmp)[i].as<int>() == 0) {
+                    if ((*tmp)[i].is<int>() && (*tmp)[i].as<int>() == 4) {
                         std::cout << "None";
                         if (i != tmp->size() - 1)
                             std::cout << ' ';
@@ -1125,6 +1158,7 @@ class EvalVisitor: public Python3BaseVisitor {
                     double tmp = arg.as<double>();
                     tmpString = std::to_string(tmp);
                     tmpString = '"' + tmpString + '"';
+                    return tmpString;
                 } else if (arg.is<bool>()) {
                     if (arg.as<bool>()) {
                         std::string tmp = "\"True\"";
@@ -1252,7 +1286,7 @@ class EvalVisitor: public Python3BaseVisitor {
             return tmp;
         }
         if (ctx->NONE()){
-            return 0;
+            return 4;
         }
         if (ctx->TRUE()) {
             bool tmp = true;
@@ -1284,10 +1318,12 @@ class EvalVisitor: public Python3BaseVisitor {
             for (int i = 0; i < ctx->test().size(); i++) {
                 antlrcpp::Any tmp = visit(ctx->test(i));
                 tmpTest->push_back(tmp);
+                
                 if (tmp.is<int>() && tmp.as<int>() == 0) {
                     delete tmpTest;
                     return 0;
                 }
+                
             }
             return tmpTest;
         }
