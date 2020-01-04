@@ -1,0 +1,3 @@
+print('s' * 0)
+print(5 * "yhy" * 4)
+print("12345" * 3)

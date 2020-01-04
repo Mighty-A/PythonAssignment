@@ -90,3 +90,11 @@
 ##### 11.string and bool operatrion
     Passing 2 of 4
     Wrong Answer: 3 4
+
+### 2020.1.3 
+##### remaining problems:
+1. -4 // 2 = -2  solved
+2. string mul num
+
+### 2020.1.4
+##### 

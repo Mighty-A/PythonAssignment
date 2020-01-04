@@ -215,10 +215,14 @@ BigInteger operator/(const BigInteger& a, const BigInteger& b) {
         tmpa.is_positive = true;
         tmpb.is_positive = true;
         tmp = tmpa / tmpb;
+        bool flag = true;
+        if (tmpa - tmp * tmpb == BigInteger("0"))
+            flag = false; 
         tmp.is_positive = false;
         BigInteger one("1");
         one.is_positive = true;
-        tmp = tmp - one;
+        if (flag)
+            tmp = tmp - one;
         return tmp;
     }
 }

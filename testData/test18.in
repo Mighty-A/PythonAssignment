@@ -1,0 +1,10 @@
+def fun(a):
+    if a > 5:
+        print(a)
+        return
+    else:
+        print(111 - a)
+        return
+    print("No")
+
+fun(3)
