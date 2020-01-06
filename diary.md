@@ -97,4 +97,93 @@
 2. string mul num
 
 ### 2020.1.4
-##### 
+##### results of submit:
+## passing 70 of 81!
+##### 1.arithmetic and comparison
+    Passing 6 of 8
+    Wrong Answer: 2 8
+##### 2.basic operation
+    Passing 7 of 7
+##### 3.big integer
+    Passing 20 of 20
+##### 4.comprehensive
+    Passing 6 of 7
+    Runtime Error: 3
+##### 5.comprehensive(require longer time)
+    Passing 5 of 6
+    System Error: 5
+##### 6.control flow
+    Passing 6 of 7
+    Runtime Error: 4
+##### 7.function
+    Passing 7 of 11
+    Wrong Answer: 5 8 11
+    Runtime Error: 10
+##### 8.global and local
+    Pasing 1 of 1
+##### 9.memory test
+    Passing 7 of 8
+    Runtime Error: 3
+##### 10.most complex tests
+    Passing 2 of 2
+##### 11.string and bool operatrion
+    Passing 3 of 4
+    Wrong Answer: 3 
+
+##### results of submit:
+## Passing 75 of 81
+##### 1.arithmetic and comparison
+    Passing 7 of 8
+    Wrong Answer: 8
+##### 2.basic operation
+    Passing 7 of 7
+##### 3.big integer
+    Passing 20 of 20
+##### 4.comprehensive
+    Passing 7 of 7
+##### 5.comprehensive(require longer time)
+    Passing 5 of 6
+    System Error: 5
+##### 6.control flow
+    Passing 7 of 7
+##### 7.function
+    Passing 7 of 11
+    Wrong Answer: 5 8 11
+    Runtime Error: 10
+##### 8.global and local
+    Pasing 1 of 1
+##### 9.memory test
+    Passing 8 of 8
+##### 10.most complex tests
+    Passing 2 of 2
+##### 11.string and bool operatrion
+    Passing 4 of 4
+
+### 2020.1.5
+##### results of submit:
+## Passing 76 of 81
+##### 1.arithmetic and comparison
+    Passing 7 of 8
+    Wrong Answer: 8
+##### 2.basic operation
+    Passing 7 of 7
+##### 3.big integer
+    Passing 20 of 20
+##### 4.comprehensive
+    Passing 7 of 7
+##### 5.comprehensive(require longer time)
+    Passing 5 of 6
+    Wrong Answer: 5
+##### 6.control flow
+    Passing 7 of 7
+##### 7.function
+    Passing 8 of 11
+    Wrong Answer: 5 10 11
+##### 8.global and local
+    Pasing 1 of 1
+##### 9.memory test
+    Passing 8 of 8
+##### 10.most complex tests
+    Passing 2 of 2
+##### 11.string and bool operatrion
+    Passing 4 of 4

@@ -15,7 +15,7 @@ std::map<std::string, Python3Parser::FuncdefContext *> Function;
 int callStack = 0;      //
 
 int anonymousArgIndex = 0;
-std::string AnonymousArg[] = {"000", "001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013", "014", "015", "016", "017", "018", "019", "020"};
+std::string AnonymousArg[] = {"000", "001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013", "014", "015", "016", "017", "018", "019", "020", "021", "022", "023", "024", "025"};
 /**********///Attention!
 /*set the int type as warning value
 if a visit return int 0 means nothing wrong
@@ -68,6 +68,12 @@ class EvalVisitor: public Python3BaseVisitor {
             callStack++;
             //std::cout << "call" << callStack << std::endl;//debug
             antlrcpp::Any tmp = visit(ctx->suite());
+            //debug
+            /*
+            if (tmp.is<int>()) {
+                std::cout << tmpFuncName << ' ' << tmp.as<int>() << std::endl;
+            }
+            */
             callStack--;
             //std::cout << "exitcall" << callStack + 1 << std::endl;//debug
             return tmp;
@@ -90,12 +96,16 @@ class EvalVisitor: public Python3BaseVisitor {
             Variables[Variables.size() - 1][visit(ctx->tfpdef(i)).as<std::string>()] = Variables[Variables.size() - 1][AnonymousArg[i]];
             i++;
         }
-        int j = 0;
+        int countOfNonDefaultArg = ctx->tfpdef().size() - ctx->test().size();
         while (i < ctx->tfpdef().size()) {                          //deal with the args that are assign or default
             std::string tmpArgName = visit(ctx->tfpdef(i)).as<std::string>();
             if (Variables[Variables.size() - 1].count(tmpArgName) == 0) {   //default;
-                Variables[Variables.size() - 1][tmpArgName] = visit(ctx->test(j));
-                j++;
+                for (int j = 0; j < ctx->test().size(); j++) {
+                    if (visit(ctx->tfpdef(j + countOfNonDefaultArg)).as<std::string>() == tmpArgName) {
+                        Variables[Variables.size() - 1][tmpArgName] = visit(ctx->test(j));
+                        break;
+                    }
+                }
             }
             i++;
         }
@@ -356,7 +366,7 @@ class EvalVisitor: public Python3BaseVisitor {
         if (ctx->testlist()) {
             return visit(ctx->testlist());
         } else {
-            return -1;          //no return function
+            return 4;          //no return function
         }
     }
     
@@ -393,7 +403,7 @@ class EvalVisitor: public Python3BaseVisitor {
                 }
             } else if (tmp.is<double>() && tmp.as<double>() != 0) {
                 flag = true;
-            } else if (tmp.is<std::string>() && tmp.as<std::string>() != "") {
+            } else if (tmp.is<std::string>() && tmp.as<std::string>() != "\"\"") {
                 flag = true;
             }
             if (flag) {
@@ -430,7 +440,7 @@ class EvalVisitor: public Python3BaseVisitor {
                 }
             } else if (tmp.is<double>() && tmp.as<double>() != 0) {
                 flag = true;
-            } else if (tmp.is<std::string>() && tmp.as<std::string>() != "") {
+            } else if (tmp.is<std::string>() && tmp.as<std::string>() != "\"\"") {
                 flag = true;
             }
             if (flag) {
@@ -466,7 +476,7 @@ class EvalVisitor: public Python3BaseVisitor {
                 antlrcpp::Any tmp = visit(ctx->stmt(i));
                 if (tmp.is<int>()) {
                     int flow = tmp.as<int>();
-                    if (flow == 1 || flow == 2 || flow == -1)            //break, continue, non-value return 
+                    if (flow == 1 || flow == 2 || flow == -1 || flow == 4)            //break, continue, non-value return 
                         return flow;
                 } else if (tmp.is<std::vector<antlrcpp::Any>*>()) {      //return expr exit if
                     return tmp;
@@ -601,16 +611,24 @@ class EvalVisitor: public Python3BaseVisitor {
 
     antlrcpp::Any visitComparison(Python3Parser::ComparisonContext* ctx) override {
         if (ctx->comp_op().size() > 0) {
+            /*
             std::vector<antlrcpp::Any> tmpArith_expr;
             for (int i = 0; i < ctx->arith_expr().size(); i++) {            //visit arith
                 tmpArith_expr.push_back(visit(ctx->arith_expr(i)));
             }
+            */
+            int arithIndex = 0;
             bool result = true;
+            antlrcpp::Any left;
+            antlrcpp::Any right = visit(ctx->arith_expr(arithIndex));
             for (int i = 0; i < ctx->comp_op().size(); i++) {               //deal with comparison;
                 int tmpComp = visit(ctx->comp_op(i)).as<int>();
-                if (tmpArith_expr[i].is<std::string>()) {
-                    std::string tmp1 = tmpArith_expr[i].as<std::string>();
-                    std::string tmp2 = tmpArith_expr[i + 1].as<std::string>();
+                arithIndex++;
+                left = right;
+                right = visit(ctx->arith_expr(arithIndex));
+                if (left.is<std::string>()) {
+                    std::string tmp1 = left.as<std::string>();
+                    std::string tmp2 = right.as<std::string>();
                     switch (tmpComp)
                     {
                     case 0:
@@ -641,9 +659,9 @@ class EvalVisitor: public Python3BaseVisitor {
                         break;
                     }
 
-                } else if (tmpArith_expr[i].is<BigInteger>() && tmpArith_expr[i + 1].is<BigInteger>()) {
-                    BigInteger tmp1 = tmpArith_expr[i].as<BigInteger>();
-                    BigInteger tmp2 = tmpArith_expr[i + 1].as<BigInteger>();
+                } else if (left.is<BigInteger>() && right.is<BigInteger>()) {
+                    BigInteger tmp1 = left.as<BigInteger>();
+                    BigInteger tmp2 = right.as<BigInteger>();
                     switch (tmpComp) {
                     case 0:
                         if (tmp1 >= tmp2)
@@ -672,9 +690,9 @@ class EvalVisitor: public Python3BaseVisitor {
                     default:
                         break;
                     }
-                } else if (tmpArith_expr[i].is<double>() && tmpArith_expr[i + 1].is<double>()) {
-                    double tmp1 = tmpArith_expr[i].as<double>();
-                    double tmp2 = tmpArith_expr[i + 1].as<double>();
+                } else if (left.is<double>() && right.is<double>()) {
+                    double tmp1 = left.as<double>();
+                    double tmp2 = right.as<double>();
                     switch (tmpComp) {
                     case 0:
                         if (tmp1 >= tmp2)
@@ -703,23 +721,23 @@ class EvalVisitor: public Python3BaseVisitor {
                     default:
                         break;
                     }
-                } else if (!tmpArith_expr[i].is<BigInteger>() || !tmpArith_expr[i + 1].is<BigInteger>()) {              //one of the two is not BigInteger
+                } else if (!left.is<BigInteger>() || !right.is<BigInteger>()) {              //one of the two is not BigInteger
                     double tmp1 = 0, tmp2 = 0;
-                    if (tmpArith_expr[i].is<BigInteger>()) 
-                        tmp1 = double(tmpArith_expr[i].as<BigInteger>());
-                    else if (tmpArith_expr[i].is<double>()) 
-                        tmp1 = double(tmpArith_expr[i].as<double>());
-                    else if (tmpArith_expr[i].is<bool>()) 
-                        if (tmpArith_expr[i].as<bool>()) 
+                    if (left.is<BigInteger>()) 
+                        tmp1 = double(left.as<BigInteger>());
+                    else if (left.is<double>()) 
+                        tmp1 = double(left.as<double>());
+                    else if (left.is<bool>()) 
+                        if (left.as<bool>()) 
                             tmp1 = 1;
                         else 
                             tmp1 = 0;
-                    if (tmpArith_expr[i + 1].is<BigInteger>())
-                        tmp2 = double(tmpArith_expr[i + 1].as<BigInteger>());
-                    else if (tmpArith_expr[i + 1].is<double>())
-                        tmp2 = double(tmpArith_expr[i + 1].as<double>());
-                    else if (tmpArith_expr[i + 1].is<bool>())
-                        if (tmpArith_expr[i + 1].as<bool>())
+                    if (right.is<BigInteger>())
+                        tmp2 = double(right.as<BigInteger>());
+                    else if (right.is<double>())
+                        tmp2 = double(right.as<double>());
+                    else if (right.is<bool>())
+                        if (right.as<bool>())
                             tmp2 = 1;
                         else
                             tmp2 = 0;
@@ -804,6 +822,8 @@ class EvalVisitor: public Python3BaseVisitor {
                     isInteger = false;
                     resultFloat = firstTerm.as<double>();
                 }
+                if (firstTerm.is<bool>() && firstTerm.as<bool>())
+                    resultInt = BigInteger("1");
                 while (countOfADD > 0 || countOfMINUS > 0) {
                     int tmpIndexOfADD = 0;
                     int tmpINdexOfMINUS = 0;
@@ -811,7 +831,8 @@ class EvalVisitor: public Python3BaseVisitor {
 
                     if (countOfADD > 0) {
                         tmpIndexOfADD = ctx->ADD(countOfADD - 1)->getSymbol()->getTokenIndex();
-                    } else {
+                    }
+                    if (countOfMINUS > 0){
                         tmpINdexOfMINUS = ctx->MINUS(countOfMINUS - 1)->getSymbol()->getTokenIndex();
                     }
                     if (tmpIndexOfADD > tmpINdexOfMINUS) {
@@ -878,8 +899,15 @@ class EvalVisitor: public Python3BaseVisitor {
             antlrcpp::Any tmpfirstFactor = visit(ctx->factor(0));
             if (tmpfirstFactor.is<std::string>()) {
                 std::string tmpString = tmpfirstFactor.as<std::string>();
-                BigInteger tmpFactor = visit(ctx->factor(1)).as<BigInteger>();
+                antlrcpp::Any tmp = visit(ctx->factor(1));
+                BigInteger tmpFactor;
                 BigInteger one("1");
+                if (tmp.is<BigInteger>()) 
+                    tmpFactor = tmp.as<BigInteger>();
+                else if (tmp.is<bool>() && tmp.as<bool>()) 
+                    tmpFactor = one;
+                else 
+                    tmpFactor = BigInteger("0");
                 std::string resultString;
                 resultString += '"';
                 tmpString.erase(0,1);
@@ -916,7 +944,7 @@ class EvalVisitor: public Python3BaseVisitor {
                 int tmpIndexOfSTAR = 0x3f3f3f, tmpIndexOfDIV = 0x3f3f3f, tmpIndexOfIDIV = 0x3f3f3f, tmpIndexOfMOD = 0x3f3f3f;
                 if (iSTAR < countOfSTAR) 
                     tmpIndexOfSTAR = ctx->STAR(iSTAR)->getSymbol()->getTokenIndex();
-                if (iDIV < countOfIDIV)
+                if (iIDIV < countOfIDIV)
                     tmpIndexOfIDIV = ctx->IDIV(iIDIV)->getSymbol()->getTokenIndex();
                 if (iDIV < countOfDIV)
                     tmpIndexOfDIV = ctx->DIV(iDIV)->getSymbol()->getTokenIndex();
@@ -952,6 +980,10 @@ class EvalVisitor: public Python3BaseVisitor {
                         if (resultIsBigInteger) {
                             if (!tmpFactor.as<bool>())          //* 0
                                 resultInt = BigInteger("0");
+                        } else if (resultIsString) {
+                            if (!tmpFactor.as<bool>()) {
+                                resultString = "\"\"";
+                            }
                         } else {
                             if (!tmpFactor.as<bool>())          //* 0
                                 resultFloat = 0;
@@ -1242,8 +1274,9 @@ class EvalVisitor: public Python3BaseVisitor {
                     } else {
                         return returnValue;
                     }
+                } else if (returnValue.is<int>() && returnValue.as<int>() == 4)  {   //deal with the non-return func
+                    return 0;
                 }
-                
                 return returnValue;
             }
             return tmp;   //

@@ -1,0 +1,7 @@
+def funA(a, b, c = 2.3, d = 9, e = 10):
+    return a + b + c + d + e
+
+x = 0
+y = 0.2
+
+print(funA(0, b = y, c = 3))

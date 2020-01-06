@@ -1,3 +1,12 @@
-print('s' * 0)
-print(5 * "yhy" * 4)
-print("12345" * 3)
+def f1():
+    a = 10
+    print(a)
+    return
+
+def f2():
+    a = 1
+    print(a)
+    f1()
+    print(a)
+    return
+f2()
