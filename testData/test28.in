@@ -1,0 +1,46 @@
+#String Operation Test
+Hello = "Hello, "
+World = "World!"
+print(Hello + World)
+Hello *= 3
+print(Hello + "is there anybody in there?")
+s1 ="abc"
+s2 = "def"
+c = 123.12
+c2 = -1
+c3 = 0
+c4 =4
+cmp = Hello <= World
+a = False
+b = True
+print(cmp)
+print(not cmp)
+print(a and b)
+print(a or b)
+print(a and cmp)
+print(b and cmp and b and a or a or a or b and a or b and not a )
+print(int(c),int(a),int(b))
+print(bool(c),bool(c2),bool(c3))
+print(str(c3))
+print(str(c))
+print(str(c2))   #
+print(str(a))
+print(str(b))
+print(float(b))
+print(float(a))
+#print(float(c))
+print(float(c3))
+print(float(c2))
+b += b
+b += b
+c *= c2
+print(b)#
+print(c)
+c *= c2
+print(c)
+s1+=s2
+s2+=s1
+print(s1)
+print(s2)
+c4 *= s2
+print(c4)#

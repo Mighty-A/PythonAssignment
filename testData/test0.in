@@ -1,12 +1,2 @@
-def f1():
-    a = 10
-    print(a)
-    return
-
-def f2():
-    a = 1
-    print(a)
-    f1()
-    print(a)
-    return
-f2()
+a , b = 233, 12
+print(float(str(a) + str(b)),int(str(a) + str(b)))

@@ -1,0 +1,12 @@
+a = 1
+def f1(b):
+    print(b)
+def fun():
+    a = 3
+    f1(b = a)
+    return
+def funB():
+    f1(b = a)
+    return
+fun()
+funB()

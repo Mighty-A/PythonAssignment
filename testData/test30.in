@@ -1,0 +1,2 @@
+a , b = 233, 12
+print(float(str(a) + str(b)),int(str(a) + str(b)))

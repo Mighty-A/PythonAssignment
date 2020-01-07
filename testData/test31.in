@@ -1,0 +1,15 @@
+def f1(x, y):
+    print(f2(f3(-5), f3(-6)))
+    print(f2(f3(a), f3(y)))
+    print(f2(f3(y), f3(x)))
+    print(f2(f3(a), f3(b)))
+
+def f2(a, b):
+    return b, a
+
+def f3(a):
+    return a + 1
+
+a = 1
+b = 2
+f1(10, 19)

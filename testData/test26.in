@@ -1,0 +1,9 @@
+def f(a,b):
+    print(a)
+    print(b)
+    g(b = a,a = b)
+def g(a,b):
+    print(a)
+    print(b)
+
+f(1,2)
